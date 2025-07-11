@@ -6,13 +6,19 @@ class wish_driver extends uvm_driver #(wish_packet);
     endfunction: new
 
     virtual wish_if vif;
+    int n_wpkt;
 
     function void build_phase (uvm_phase phase);
         `uvm_info(get_type_name(), "BUILD PHASE RUNNING ...", UVM_LOW)
     endfunction: build_phase
 
     task run_phase(uvm_phase phase);
+
+        if (vif == null)
+        `uvm_fatal(get_type_name(), "Driver VIF is NULL in run_phase!")
+
         forever begin
+            @(negedge vif.clk_i);
             seq_item_port.get_next_item(req);
             checking_packets(req);
             seq_item_port.item_done(req);
@@ -25,7 +31,14 @@ class wish_driver extends uvm_driver #(wish_packet);
     endfunction: connect_phase
 
     task checking_packets(wish_packet req);
+            vif.adr_i = req.adr_i;
+            vif.dat_i = req.dat_i;
         `uvm_info(get_type_name(), $sformatf("Packet SENT: \n%s", req.sprint()), UVM_LOW)
+        n_wpkt++;
     endtask: checking_packets
+
+    function void report_phase(uvm_phase phase);
+        `uvm_info(get_type_name(), $sformatf("DRIVER : Wishbone Packets SENT : %0d", n_wpkt), UVM_LOW)
+    endfunction : report_phase
 
 endclass: wish_driver

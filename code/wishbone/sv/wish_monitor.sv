@@ -22,16 +22,24 @@ class wish_monitor extends uvm_monitor;
         `uvm_fatal("NOVIF", "VIF in MONITOR is NOT SET")
     endfunction: connect_phase
 
-    // task run_phase (uvm_phase phase);
-    //     forever begin
-    //         wpkt = wish_packet::type_id::create("wpkt", this);
-    //         `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
-    //         n_wpkt++;
-    //     end
-    // endtask: run_phase
+    task run_phase (uvm_phase phase);
 
-    // function void report_phase(uvm_phase phase);
-    //     `uvm_info(get_type_name(), $sformatf("MONITOR : Wishbone Packets Collected : %0d", n_wpkt), UVM_LOW)
-    // endfunction : report_phase
+        if (vif == null)
+        `uvm_fatal(get_type_name(), "Monitor VIF is NULL in run_phase!")
+
+        @(posedge vif.clk_i);
+        forever begin
+             @(posedge vif.clk_i);
+            wpkt = wish_packet::type_id::create("wpkt", this);
+            wpkt.adr_i = vif.adr_i;
+            wpkt.dat_i = vif.dat_i;
+            `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
+            n_wpkt++;
+        end
+    endtask: run_phase
+
+    function void report_phase(uvm_phase phase);
+        `uvm_info(get_type_name(), $sformatf("MONITOR : Wishbone Packets Collected : %0d", n_wpkt), UVM_LOW)
+    endfunction : report_phase
 
 endclass: wish_monitor
