@@ -2,6 +2,6 @@
 *qaLog.txt
 *.simvision
 *.key
-*.history
+#*.history
 *cov_work
 *xcelium.*
