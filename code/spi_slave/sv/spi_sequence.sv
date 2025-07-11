@@ -1,7 +1,7 @@
-class wish_sequence extends uvm_sequence#(wish_packet);
-    `uvm_object_utils(wish_sequence)
+class spi_sequence extends uvm_sequence#(spi_packet);
+    `uvm_object_utils(spi_sequence)
 
-    function new (string name = "wish_sequence");
+    function new (string name = "spi_sequence");
         super.new(name);
     endfunction: new
 
@@ -35,13 +35,13 @@ class wish_sequence extends uvm_sequence#(wish_packet);
     end
   endtask : post_body
 
-endclass: wish_sequence
+endclass: spi_sequence
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////                         test_sequence                                      //////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class test_sequence extends wish_sequence;
+class test_sequence extends spi_sequence;
     `uvm_object_utils(test_sequence)
 
     function new (string name = "test_sequence");
@@ -55,4 +55,4 @@ class test_sequence extends wish_sequence;
         end
     endtask: body
 
-endclass: test_sequence
+endclass: spi_sequence

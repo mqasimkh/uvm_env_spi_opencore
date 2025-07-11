@@ -1,0 +1,6 @@
+s1(11Jul2025:16:37:35):  xrun -access +rwc -uvm -f file.f 
+s2(11Jul2025:16:39:19):  xrun -access +rwc -uvm -f file.f 
+s3(11Jul2025:16:40:57):  xrun -access +rwc -uvm -f file.f 
+s4(11Jul2025:16:41:14):  xrun -access +rwc -uvm -f file.f 
+s5(11Jul2025:16:42:01):  xrun -access +rwc -uvm -f file.f 
+s6(11Jul2025:16:43:22):  xrun -access +rwc -uvm -f file.f 

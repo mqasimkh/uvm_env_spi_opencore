@@ -1,7 +1,7 @@
-class wish_driver extends uvm_driver #(wish_packet);
-    `uvm_component_utils(wish_driver)
+class spi_driver extends uvm_driver #(spi_packet);
+    `uvm_component_utils(spi_driver)
 
-    function new (string name = "wish_driver", uvm_component parent);
+    function new (string name = "spi_driver", uvm_component parent);
         super.new(name, parent);
     endfunction: new
 
@@ -17,8 +17,8 @@ class wish_driver extends uvm_driver #(wish_packet);
         end
     endtask: run_phase
 
-    task checking_packets(wish_packet req);
+    task checking_packets(spi_packet req);
         `uvm_info(get_type_name(), $sformatf("Packet is \n%s", req.sprint()), UVM_LOW)
     endtask: checking_packets
 
-endclass: wish_driver
+endclass: spi_driver
