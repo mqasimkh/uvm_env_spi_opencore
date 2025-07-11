@@ -38,3 +38,9 @@
 ../sv/macros/uvm_deprecated_defines.svh
 ../tb/macros/uvm_deprecated_defines.svh
 ./wish_packet.sv
+./wish_sequence.sv
+./wish_sequencer.sv
+./wish_driver.sv
+./wish_monitor.sv
+./wish_agent.sv
+./wish_env.sv
