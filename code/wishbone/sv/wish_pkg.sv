@@ -1,5 +1,7 @@
 package wish_pkg;
 
+    //typedef uvm_config_db#(virtual wish_if) wish_vif_config;
+
     import uvm_pkg::*;
     `include "uvm_macros.svh"
     `include "wish_packet.sv"

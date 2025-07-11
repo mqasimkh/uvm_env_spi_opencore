@@ -5,6 +5,8 @@ class wish_driver extends uvm_driver #(wish_packet);
         super.new(name, parent);
     endfunction: new
 
+    virtual wish_if vif;
+
     function void build_phase (uvm_phase phase);
         `uvm_info(get_type_name(), "BUILD PHASE RUNNING ...", UVM_LOW)
     endfunction: build_phase
@@ -17,8 +19,13 @@ class wish_driver extends uvm_driver #(wish_packet);
         end
     endtask: run_phase
 
+    function void connect_phase (uvm_phase phase);
+        if (!uvm_config_db#(virtual wish_if)::get(this, "", "vif", vif))
+            `uvm_fatal("NOVIF", "VIF in DRIVER is NOT SET")
+    endfunction: connect_phase
+
     task checking_packets(wish_packet req);
-        `uvm_info(get_type_name(), $sformatf("Packet is \n%s", req.sprint()), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("Packet SENT: \n%s", req.sprint()), UVM_LOW)
     endtask: checking_packets
 
 endclass: wish_driver

@@ -1873,3 +1873,525 @@
 07/11/2025 16:56:16 (309449-415731392): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
 07/11/2025 16:56:16 (309449-415731392): Exit started ....
 07/11/2025 16:56:16 (309449-415731392): Exit completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760 xmsim): Initialization started (19.02-s004)...
+07/11/2025 16:58:00 (904839-234413760): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 16:58:00 (904839-234413760): Process ID 37189
+07/11/2025 16:58:00 (904839-234413760): Creating a new job ...
+07/11/2025 16:58:00 (904839-234413760): Validating server path: 
+07/11/2025 16:58:00 (904839-234413760): Server path validation status: 0
+07/11/2025 16:58:00 (904839-234413760):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of recheck interval minimum is 290.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of sleep time value of 0.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of display specification is ':0'.
+07/11/2025 16:58:00 (904839-234413760):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 16:58:00 (904839-234413760):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 16:58:00 (904839-234413760): Job creation completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Creating a new job ...
+07/11/2025 16:58:00 (904839-234413760):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of recheck interval minimum is 290.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of sleep time value of 0.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of display specification is ':0'.
+07/11/2025 16:58:00 (904839-234413760):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 16:58:00 (904839-234413760):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 16:58:00 (904839-234413760): Job creation completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Creating a new job ...
+07/11/2025 16:58:00 (904839-234413760):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of recheck interval minimum is 290.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of sleep time value of 0.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of display specification is ':0'.
+07/11/2025 16:58:00 (904839-234413760):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 16:58:00 (904839-234413760):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 16:58:00 (904839-234413760): Job creation completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Creating a new job ...
+07/11/2025 16:58:00 (904839-234413760):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of recheck interval minimum is 290.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of sleep time value of 0.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of display specification is ':0'.
+07/11/2025 16:58:00 (904839-234413760):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 16:58:00 (904839-234413760):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 16:58:00 (904839-234413760): Job creation completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Initialization completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Check-out (Increment) started ....
+07/11/2025 16:58:00 (904839-234413760): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 16:58:00 (904839-234413760):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 16:58:00 (904839-234413760): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Recheck started ....
+07/11/2025 16:58:00 (904839-234413760):   Checking feature Xcelium_Single_Core
+07/11/2025 16:58:00 (904839-234413760):   Time spent in server Recheck was 0.
+07/11/2025 16:58:00 (904839-234413760): Re-check completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Recheck started ....
+07/11/2025 16:58:00 (904839-234413760):   Actual recheck skipped due to recheck interval...
+07/11/2025 16:58:00 (904839-234413760): Re-check completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Recheck started ....
+07/11/2025 16:58:00 (904839-234413760):   Actual recheck skipped due to recheck interval...
+07/11/2025 16:58:00 (904839-234413760): Re-check completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Recheck started ....
+07/11/2025 16:58:00 (904839-234413760):   Actual recheck skipped due to recheck interval...
+07/11/2025 16:58:00 (904839-234413760): Re-check completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Check-in started ....
+07/11/2025 16:58:00 (904839-234413760): Creating a new job ...
+07/11/2025 16:58:00 (904839-234413760): Validating server path: 5280@10.19.32.90
+07/11/2025 16:58:00 (904839-234413760): Server path validation status: 0
+07/11/2025 16:58:00 (904839-234413760):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of recheck interval minimum is 290.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of sleep time value of 0.
+07/11/2025 16:58:00 (904839-234413760):   Configuration of display specification is ':0'.
+07/11/2025 16:58:00 (904839-234413760):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 16:58:00 (904839-234413760):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 16:58:00 (904839-234413760): Job creation completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 16:58:00 (904839-234413760): Exit started ....
+07/11/2025 16:58:00 (904839-234413760): Exit completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528 xmsim): Initialization started (19.02-s004)...
+07/11/2025 18:32:33 (971196-4042702528): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 18:32:33 (971196-4042702528): Process ID 39616
+07/11/2025 18:32:33 (971196-4042702528): Creating a new job ...
+07/11/2025 18:32:33 (971196-4042702528): Validating server path: 
+07/11/2025 18:32:33 (971196-4042702528): Server path validation status: 0
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of sleep time value of 0.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of display specification is ':0'.
+07/11/2025 18:32:33 (971196-4042702528):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:32:33 (971196-4042702528):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:32:33 (971196-4042702528): Job creation completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528): Creating a new job ...
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of sleep time value of 0.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of display specification is ':0'.
+07/11/2025 18:32:33 (971196-4042702528):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:32:33 (971196-4042702528):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:32:33 (971196-4042702528): Job creation completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528): Creating a new job ...
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of sleep time value of 0.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of display specification is ':0'.
+07/11/2025 18:32:33 (971196-4042702528):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:32:33 (971196-4042702528):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:32:33 (971196-4042702528): Job creation completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528): Creating a new job ...
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of sleep time value of 0.
+07/11/2025 18:32:33 (971196-4042702528):   Configuration of display specification is ':0'.
+07/11/2025 18:32:33 (971196-4042702528):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:32:33 (971196-4042702528):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:32:33 (971196-4042702528): Job creation completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528): Initialization completed with status 0 (time 0).
+07/11/2025 18:32:33 (971196-4042702528): Check-out (Increment) started ....
+07/11/2025 18:32:33 (971196-4042702528): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 18:32:33 (971196-4042702528):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 18:32:33 (971196-4042702528): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 18:32:34 (971196-4042702528): Recheck started ....
+07/11/2025 18:32:34 (971196-4042702528):   Checking feature Xcelium_Single_Core
+07/11/2025 18:32:34 (971196-4042702528):   Time spent in server Recheck was 0.
+07/11/2025 18:32:34 (971196-4042702528): Re-check completed with status 0 (time 0).
+07/11/2025 18:32:34 (971196-4042702528): Recheck started ....
+07/11/2025 18:32:34 (971196-4042702528):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:32:34 (971196-4042702528): Re-check completed with status 0 (time 0).
+07/11/2025 18:32:34 (971196-4042702528): Recheck started ....
+07/11/2025 18:32:34 (971196-4042702528):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:32:34 (971196-4042702528): Re-check completed with status 0 (time 0).
+07/11/2025 18:32:41 (971196-4042702528): Check-in started ....
+07/11/2025 18:32:41 (971196-4042702528): Creating a new job ...
+07/11/2025 18:32:41 (971196-4042702528): Validating server path: 5280@10.19.32.90
+07/11/2025 18:32:41 (971196-4042702528): Server path validation status: 0
+07/11/2025 18:32:41 (971196-4042702528):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:32:41 (971196-4042702528):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:32:41 (971196-4042702528):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:32:41 (971196-4042702528):   Configuration of sleep time value of 0.
+07/11/2025 18:32:41 (971196-4042702528):   Configuration of display specification is ':0'.
+07/11/2025 18:32:41 (971196-4042702528):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:32:41 (971196-4042702528):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:32:41 (971196-4042702528): Job creation completed with status 0 (time 0).
+07/11/2025 18:32:41 (971196-4042702528): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 18:32:41 (971196-4042702528): Exit started ....
+07/11/2025 18:32:41 (971196-4042702528): Exit completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072 xmsim): Initialization started (19.02-s004)...
+07/11/2025 18:44:28 (251751-1888571072): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 18:44:28 (251751-1888571072): Process ID 40499
+07/11/2025 18:44:28 (251751-1888571072): Creating a new job ...
+07/11/2025 18:44:28 (251751-1888571072): Validating server path: 
+07/11/2025 18:44:28 (251751-1888571072): Server path validation status: 0
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of sleep time value of 0.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of display specification is ':0'.
+07/11/2025 18:44:28 (251751-1888571072):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:28 (251751-1888571072):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:28 (251751-1888571072): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072): Creating a new job ...
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of sleep time value of 0.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of display specification is ':0'.
+07/11/2025 18:44:28 (251751-1888571072):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:28 (251751-1888571072):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:28 (251751-1888571072): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072): Creating a new job ...
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of sleep time value of 0.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of display specification is ':0'.
+07/11/2025 18:44:28 (251751-1888571072):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:28 (251751-1888571072):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:28 (251751-1888571072): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072): Creating a new job ...
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of sleep time value of 0.
+07/11/2025 18:44:28 (251751-1888571072):   Configuration of display specification is ':0'.
+07/11/2025 18:44:28 (251751-1888571072):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:28 (251751-1888571072):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:28 (251751-1888571072): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072): Initialization completed with status 0 (time 0).
+07/11/2025 18:44:28 (251751-1888571072): Check-out (Increment) started ....
+07/11/2025 18:44:28 (251751-1888571072): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 18:44:28 (251751-1888571072):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 18:44:28 (251751-1888571072): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Recheck started ....
+07/11/2025 18:44:29 (251751-1888571072):   Checking feature Xcelium_Single_Core
+07/11/2025 18:44:29 (251751-1888571072):   Time spent in server Recheck was 0.
+07/11/2025 18:44:29 (251751-1888571072): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Recheck started ....
+07/11/2025 18:44:29 (251751-1888571072):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:29 (251751-1888571072): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Recheck started ....
+07/11/2025 18:44:29 (251751-1888571072):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:29 (251751-1888571072): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Recheck started ....
+07/11/2025 18:44:29 (251751-1888571072):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:29 (251751-1888571072): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Check-in started ....
+07/11/2025 18:44:29 (251751-1888571072): Creating a new job ...
+07/11/2025 18:44:29 (251751-1888571072): Validating server path: 5280@10.19.32.90
+07/11/2025 18:44:29 (251751-1888571072): Server path validation status: 0
+07/11/2025 18:44:29 (251751-1888571072):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:29 (251751-1888571072):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:29 (251751-1888571072):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:29 (251751-1888571072):   Configuration of sleep time value of 0.
+07/11/2025 18:44:29 (251751-1888571072):   Configuration of display specification is ':0'.
+07/11/2025 18:44:29 (251751-1888571072):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:29 (251751-1888571072):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:29 (251751-1888571072): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 18:44:29 (251751-1888571072): Exit started ....
+07/11/2025 18:44:29 (251751-1888571072): Exit completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808 xmsim): Initialization started (19.02-s004)...
+07/11/2025 18:44:49 (770707-1701551808): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 18:44:49 (770707-1701551808): Process ID 40679
+07/11/2025 18:44:49 (770707-1701551808): Creating a new job ...
+07/11/2025 18:44:49 (770707-1701551808): Validating server path: 
+07/11/2025 18:44:49 (770707-1701551808): Server path validation status: 0
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of sleep time value of 0.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of display specification is ':0'.
+07/11/2025 18:44:49 (770707-1701551808):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:49 (770707-1701551808):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:49 (770707-1701551808): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Creating a new job ...
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of sleep time value of 0.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of display specification is ':0'.
+07/11/2025 18:44:49 (770707-1701551808):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:49 (770707-1701551808):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:49 (770707-1701551808): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Creating a new job ...
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of sleep time value of 0.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of display specification is ':0'.
+07/11/2025 18:44:49 (770707-1701551808):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:49 (770707-1701551808):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:49 (770707-1701551808): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Creating a new job ...
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of sleep time value of 0.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of display specification is ':0'.
+07/11/2025 18:44:49 (770707-1701551808):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:49 (770707-1701551808):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:49 (770707-1701551808): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Initialization completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Check-out (Increment) started ....
+07/11/2025 18:44:49 (770707-1701551808): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 18:44:49 (770707-1701551808):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 18:44:49 (770707-1701551808): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Recheck started ....
+07/11/2025 18:44:49 (770707-1701551808):   Checking feature Xcelium_Single_Core
+07/11/2025 18:44:49 (770707-1701551808):   Time spent in server Recheck was 0.
+07/11/2025 18:44:49 (770707-1701551808): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Recheck started ....
+07/11/2025 18:44:49 (770707-1701551808):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:49 (770707-1701551808): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Recheck started ....
+07/11/2025 18:44:49 (770707-1701551808):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:49 (770707-1701551808): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Recheck started ....
+07/11/2025 18:44:49 (770707-1701551808):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:44:49 (770707-1701551808): Re-check completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Check-in started ....
+07/11/2025 18:44:49 (770707-1701551808): Creating a new job ...
+07/11/2025 18:44:49 (770707-1701551808): Validating server path: 5280@10.19.32.90
+07/11/2025 18:44:49 (770707-1701551808): Server path validation status: 0
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of sleep time value of 0.
+07/11/2025 18:44:49 (770707-1701551808):   Configuration of display specification is ':0'.
+07/11/2025 18:44:49 (770707-1701551808):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:44:49 (770707-1701551808):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:44:49 (770707-1701551808): Job creation completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 18:44:49 (770707-1701551808): Exit started ....
+07/11/2025 18:44:49 (770707-1701551808): Exit completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176 xmsim): Initialization started (19.02-s004)...
+07/11/2025 18:45:02 (889017-2771562176): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 18:45:02 (889017-2771562176): Process ID 40776
+07/11/2025 18:45:02 (889017-2771562176): Creating a new job ...
+07/11/2025 18:45:02 (889017-2771562176): Validating server path: 
+07/11/2025 18:45:02 (889017-2771562176): Server path validation status: 0
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of sleep time value of 0.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of display specification is ':0'.
+07/11/2025 18:45:02 (889017-2771562176):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:45:02 (889017-2771562176):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:45:02 (889017-2771562176): Job creation completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Creating a new job ...
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of sleep time value of 0.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of display specification is ':0'.
+07/11/2025 18:45:02 (889017-2771562176):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:45:02 (889017-2771562176):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:45:02 (889017-2771562176): Job creation completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Creating a new job ...
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of sleep time value of 0.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of display specification is ':0'.
+07/11/2025 18:45:02 (889017-2771562176):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:45:02 (889017-2771562176):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:45:02 (889017-2771562176): Job creation completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Creating a new job ...
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of sleep time value of 0.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of display specification is ':0'.
+07/11/2025 18:45:02 (889017-2771562176):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:45:02 (889017-2771562176):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:45:02 (889017-2771562176): Job creation completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Initialization completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Check-out (Increment) started ....
+07/11/2025 18:45:02 (889017-2771562176): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 18:45:02 (889017-2771562176):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 18:45:02 (889017-2771562176): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Recheck started ....
+07/11/2025 18:45:02 (889017-2771562176):   Checking feature Xcelium_Single_Core
+07/11/2025 18:45:02 (889017-2771562176):   Time spent in server Recheck was 0.
+07/11/2025 18:45:02 (889017-2771562176): Re-check completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Recheck started ....
+07/11/2025 18:45:02 (889017-2771562176):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:45:02 (889017-2771562176): Re-check completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Recheck started ....
+07/11/2025 18:45:02 (889017-2771562176):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:45:02 (889017-2771562176): Re-check completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Recheck started ....
+07/11/2025 18:45:02 (889017-2771562176):   Actual recheck skipped due to recheck interval...
+07/11/2025 18:45:02 (889017-2771562176): Re-check completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Check-in started ....
+07/11/2025 18:45:02 (889017-2771562176): Creating a new job ...
+07/11/2025 18:45:02 (889017-2771562176): Validating server path: 5280@10.19.32.90
+07/11/2025 18:45:02 (889017-2771562176): Server path validation status: 0
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of recheck interval minimum is 290.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of sleep time value of 0.
+07/11/2025 18:45:02 (889017-2771562176):   Configuration of display specification is ':0'.
+07/11/2025 18:45:02 (889017-2771562176):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 18:45:02 (889017-2771562176):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 18:45:02 (889017-2771562176): Job creation completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 18:45:02 (889017-2771562176): Exit started ....
+07/11/2025 18:45:02 (889017-2771562176): Exit completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472 xmsim): Initialization started (19.02-s004)...
+07/11/2025 20:05:10 (978404-2564513472): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 20:05:10 (978404-2564513472): Process ID 45791
+07/11/2025 20:05:10 (978404-2564513472): Creating a new job ...
+07/11/2025 20:05:10 (978404-2564513472): Validating server path: 
+07/11/2025 20:05:10 (978404-2564513472): Server path validation status: 0
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of sleep time value of 0.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of display specification is ':0'.
+07/11/2025 20:05:10 (978404-2564513472):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:10 (978404-2564513472):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:10 (978404-2564513472): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472): Creating a new job ...
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of sleep time value of 0.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of display specification is ':0'.
+07/11/2025 20:05:10 (978404-2564513472):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:10 (978404-2564513472):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:10 (978404-2564513472): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472): Creating a new job ...
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of sleep time value of 0.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of display specification is ':0'.
+07/11/2025 20:05:10 (978404-2564513472):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:10 (978404-2564513472):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:10 (978404-2564513472): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472): Creating a new job ...
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of sleep time value of 0.
+07/11/2025 20:05:10 (978404-2564513472):   Configuration of display specification is ':0'.
+07/11/2025 20:05:10 (978404-2564513472):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:10 (978404-2564513472):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:10 (978404-2564513472): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472): Initialization completed with status 0 (time 0).
+07/11/2025 20:05:10 (978404-2564513472): Check-out (Increment) started ....
+07/11/2025 20:05:10 (978404-2564513472): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 20:05:10 (978404-2564513472):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 20:05:10 (978404-2564513472): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Recheck started ....
+07/11/2025 20:05:12 (978404-2564513472):   Checking feature Xcelium_Single_Core
+07/11/2025 20:05:12 (978404-2564513472):   Time spent in server Recheck was 0.
+07/11/2025 20:05:12 (978404-2564513472): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Recheck started ....
+07/11/2025 20:05:12 (978404-2564513472):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:12 (978404-2564513472): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Recheck started ....
+07/11/2025 20:05:12 (978404-2564513472):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:12 (978404-2564513472): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Recheck started ....
+07/11/2025 20:05:12 (978404-2564513472):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:12 (978404-2564513472): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Check-in started ....
+07/11/2025 20:05:12 (978404-2564513472): Creating a new job ...
+07/11/2025 20:05:12 (978404-2564513472): Validating server path: 5280@10.19.32.90
+07/11/2025 20:05:12 (978404-2564513472): Server path validation status: 0
+07/11/2025 20:05:12 (978404-2564513472):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:12 (978404-2564513472):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:12 (978404-2564513472):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:12 (978404-2564513472):   Configuration of sleep time value of 0.
+07/11/2025 20:05:12 (978404-2564513472):   Configuration of display specification is ':0'.
+07/11/2025 20:05:12 (978404-2564513472):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:12 (978404-2564513472):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:12 (978404-2564513472): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 20:05:12 (978404-2564513472): Exit started ....
+07/11/2025 20:05:12 (978404-2564513472): Exit completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616 xmsim): Initialization started (19.02-s004)...
+07/11/2025 20:05:34 (631246-2635431616): FLEXnet version 11.11.1.1 build 119913
+07/11/2025 20:05:34 (631246-2635431616): Process ID 45997
+07/11/2025 20:05:34 (631246-2635431616): Creating a new job ...
+07/11/2025 20:05:34 (631246-2635431616): Validating server path: 
+07/11/2025 20:05:34 (631246-2635431616): Server path validation status: 0
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of sleep time value of 0.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of display specification is ':0'.
+07/11/2025 20:05:34 (631246-2635431616):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:34 (631246-2635431616):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:34 (631246-2635431616): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Creating a new job ...
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of sleep time value of 0.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of display specification is ':0'.
+07/11/2025 20:05:34 (631246-2635431616):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:34 (631246-2635431616):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:34 (631246-2635431616): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Creating a new job ...
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of sleep time value of 0.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of display specification is ':0'.
+07/11/2025 20:05:34 (631246-2635431616):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:34 (631246-2635431616):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:34 (631246-2635431616): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Creating a new job ...
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of sleep time value of 0.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of display specification is ':0'.
+07/11/2025 20:05:34 (631246-2635431616):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:34 (631246-2635431616):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:34 (631246-2635431616): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Initialization completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Check-out (Increment) started ....
+07/11/2025 20:05:34 (631246-2635431616): Checking out 1 license(s) for Xcelium_Single_Core 23.000...
+07/11/2025 20:05:34 (631246-2635431616):   (Checked out from file '5280@10.19.32.90',
+             line '24.0 14-apr-2027 40 3F28D8A80C6ED56BB09C ')
+07/11/2025 20:05:34 (631246-2635431616): Check-out (Increment) completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Recheck started ....
+07/11/2025 20:05:34 (631246-2635431616):   Checking feature Xcelium_Single_Core
+07/11/2025 20:05:34 (631246-2635431616):   Time spent in server Recheck was 0.
+07/11/2025 20:05:34 (631246-2635431616): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Recheck started ....
+07/11/2025 20:05:34 (631246-2635431616):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:34 (631246-2635431616): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Recheck started ....
+07/11/2025 20:05:34 (631246-2635431616):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:34 (631246-2635431616): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Recheck started ....
+07/11/2025 20:05:34 (631246-2635431616):   Actual recheck skipped due to recheck interval...
+07/11/2025 20:05:34 (631246-2635431616): Re-check completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Check-in started ....
+07/11/2025 20:05:34 (631246-2635431616): Creating a new job ...
+07/11/2025 20:05:34 (631246-2635431616): Validating server path: 5280@10.19.32.90
+07/11/2025 20:05:34 (631246-2635431616): Server path validation status: 0
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of license path is '5280@10.19.32.90'.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of recheck interval minimum is 290.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of 2000000000 maximum retry calls.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of sleep time value of 0.
+07/11/2025 20:05:34 (631246-2635431616):   Configuration of display specification is ':0'.
+07/11/2025 20:05:34 (631246-2635431616):   Licenses will be checked out using cc@ncdc-0025(:0).
+07/11/2025 20:05:34 (631246-2635431616):   (System spec would have been cc@ncdc-0025(/dev/pts/1) )
+07/11/2025 20:05:34 (631246-2635431616): Job creation completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Check-in of Xcelium_Single_Core completed with status 0 (time 0).
+07/11/2025 20:05:34 (631246-2635431616): Exit started ....
+07/11/2025 20:05:34 (631246-2635431616): Exit completed with status 0 (time 0).

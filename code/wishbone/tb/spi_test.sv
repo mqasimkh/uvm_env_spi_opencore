@@ -8,6 +8,7 @@ class spi_test extends uvm_test;
     spi_env spi;
 
     function void build_phase (uvm_phase phase);
+        
         uvm_config_wrapper::set(this, "spi.wishbone.agent.sequencer.run_phase","default_sequence",test_sequence::get_type());
         super.build_phase(phase);
         spi = spi_env::type_id::create("spi", this);
