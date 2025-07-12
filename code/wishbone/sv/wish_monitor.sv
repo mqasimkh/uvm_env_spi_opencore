@@ -29,20 +29,19 @@ class wish_monitor extends uvm_monitor;
         
         @(posedge vif.clk_i);
         forever begin
-             @(posedge vif.clk_i);
+            @(posedge vif.ack_o);
+            //@(posedge vif.clk_i);
             if (vif.cyc_i && vif.stb_i) begin
             wpkt = wish_packet::type_id::create("wpkt", this);
-
-            wpkt.adr_i = vif.adr_i;
-            wpkt.dat_i = vif.dat_i;
-
-            wpkt.cyc_i = vif.cyc_i;
-            wpkt.stb_i = vif.stb_i;
 
             if (vif.we_i)
                 wpkt.operation = WRITE;
             else
                 wpkt.operation = READ;
+
+            wpkt.adr_i = vif.adr_i;
+            wpkt.dat_i = vif.dat_i;
+            wpkt.dat_o = vif.dat_o;
 
             `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
             n_wpkt++;
