@@ -21,15 +21,15 @@ class wish_packet extends uvm_sequence_item;
         `uvm_field_int(adr_i, UVM_ALL_ON)
         `uvm_field_int(dat_i, UVM_ALL_ON)
         
-        `uvm_field_int(clk_i, UVM_ALL_ON)
-        `uvm_field_int(rst_i, UVM_ALL_ON)
-        `uvm_field_int(cyc_i, UVM_ALL_ON)
+        // `uvm_field_int(clk_i, UVM_ALL_ON)
+        // `uvm_field_int(rst_i, UVM_ALL_ON)
+        // `uvm_field_int(cyc_i, UVM_ALL_ON)
         `uvm_field_int(stb_i, UVM_ALL_ON)
         `uvm_field_int(we_i, UVM_ALL_ON)
 
-        `uvm_field_int(inta_o, UVM_ALL_ON)
-        `uvm_field_int(ack_o, UVM_ALL_ON)
-        `uvm_field_int(dat_o, UVM_ALL_ON)
+        // `uvm_field_int(inta_o, UVM_ALL_ON)
+        // `uvm_field_int(ack_o, UVM_ALL_ON)
+        // `uvm_field_int(dat_o, UVM_ALL_ON)
         
     `uvm_object_utils_end
 

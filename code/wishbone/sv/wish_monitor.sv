@@ -39,6 +39,11 @@ class wish_monitor extends uvm_monitor;
             wpkt.cyc_i = vif.cyc_i;
             wpkt.stb_i = vif.stb_i;
 
+            if (vif.we_i)
+                wpkt.operation = WRITE;
+            else
+                wpkt.operation = READ;
+
             `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
             n_wpkt++;
             end
