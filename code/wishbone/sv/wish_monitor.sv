@@ -27,15 +27,18 @@ class wish_monitor extends uvm_monitor;
         if (vif == null)
         `uvm_fatal(get_type_name(), "Monitor VIF is NULL in run_phase!")
         
+         wait (vif.rst_i == 0);
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
+
         @(posedge vif.clk_i);
         forever begin
             
-            //@(posedge vif.ack_o);
-            @(posedge vif.clk_i);
-            if (vif.cyc_i && vif.stb_i) begin
+            @(posedge vif.ack_o);
+            //@(posedge vif.clk_i);
+            //if (vif.cyc_i && vif.stb_i) begin
             wpkt = wish_packet::type_id::create("wpkt", this);
             collect_packet(wpkt);
-            end
+            //end
         
         end
     endtask: run_phase
@@ -59,6 +62,9 @@ class wish_monitor extends uvm_monitor;
         wpkt.adr_i = vif.adr_i;
         wpkt.dat_i = vif.dat_i;
         wpkt.dat_o = vif.dat_o;
+        wpkt.cyc_i = vif.cyc_i;
+        wpkt.stb_i = vif.stb_i;
+        wpkt.we_i =  vif.we_i;
 
         `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
         n_wpkt++;

@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 12, 2025 at 19:34:32 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 13, 2025 at 00:51:08 PKT
 xrun
 	-access +rwc
 	-uvm
@@ -198,9 +198,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file '../sv/wish_driver.sv' is newer than expected.
-	expected: Sat Jul 12 19:10:31 2025
-	actual:   Sat Jul 12 19:33:43 2025
+Recompiling... reason: file '../sv/wish_monitor.sv' is newer than expected.
+	expected: Sun Jul 13 00:43:36 2025
+	actual:   Sun Jul 13 00:51:05 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -338,23 +338,35 @@ DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
 file: ../sv/wish_pkg.sv
-        `uvm_info(get_type_name(), "RESET Deasserted — Starting driver", UVM_LOW)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
                                                      |
 xmvlog: *W,NONPRT (../sv/wish_driver.sv,21|53): non-printable character (0xe2) ignored.
 (`include file: ../sv/wish_driver.sv line 21, file: ../sv/wish_pkg.sv line 10)
-        `uvm_info(get_type_name(), "RESET Deasserted — Starting driver", UVM_LOW)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
                                                       |
 xmvlog: *W,NONPRT (../sv/wish_driver.sv,21|54): non-printable character (0x80) ignored.
 (`include file: ../sv/wish_driver.sv line 21, file: ../sv/wish_pkg.sv line 10)
-        `uvm_info(get_type_name(), "RESET Deasserted — Starting driver", UVM_LOW)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
                                                        |
 xmvlog: *W,NONPRT (../sv/wish_driver.sv,21|55): non-printable character (0x94) ignored.
 (`include file: ../sv/wish_driver.sv line 21, file: ../sv/wish_pkg.sv line 10)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
+                                                     |
+xmvlog: *W,NONPRT (../sv/wish_monitor.sv,31|53): non-printable character (0xe2) ignored.
+(`include file: ../sv/wish_monitor.sv line 31, file: ../sv/wish_pkg.sv line 11)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
+                                                      |
+xmvlog: *W,NONPRT (../sv/wish_monitor.sv,31|54): non-printable character (0x80) ignored.
+(`include file: ../sv/wish_monitor.sv line 31, file: ../sv/wish_pkg.sv line 11)
+        `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
+                                                       |
+xmvlog: *W,NONPRT (../sv/wish_monitor.sv,31|55): non-printable character (0x94) ignored.
+(`include file: ../sv/wish_monitor.sv line 31, file: ../sv/wish_pkg.sv line 11)
+package wish_pkg;
+               |
+xmvlog: *W,TSNSPK (../sv/wish_pkg.sv,1|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
 	package worklib.wish_pkg:sv
-		errors: 0, warnings: 3
-file: ../sv/wish_if.sv
-	interface worklib.wish_if:sv
-		errors: 0, warnings: 0
+		errors: 0, warnings: 7
 file: tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
@@ -553,10 +565,8 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.tb_top:sv <0x28528918>
-			streams: 587, words: 657891
-		worklib.wish_if:sv <0x228286b0>
-			streams:   2, words:   688
+		worklib.tb_top:sv <0x597bf235>
+			streams: 587, words: 662323
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -681,11 +691,10 @@ uvm_test_top                 spi_test                -     @2645
 UVM_INFO ../sv/wish_monitor.sv(17) @ 0 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
 UVM_INFO ../sv/wish_sequence.sv(21) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
 UVM_INFO ../sv/wish_sequence.sv(73) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
-ACK_GEN @5 ns: cyc_i=0 stb_i=0 ack_o=x
-ACK_EVAL @5 ns | cyc_i=0, stb_i=0, ack_o(before)=x, wb_acc=0, !ack_o=x, result=0
-UVM_INFO ../sv/wish_driver.sv(21) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting driver
-ACK_GEN @15 ns: cyc_i=0 stb_i=0 ack_o=0
-ACK_EVAL @15 ns | cyc_i=0, stb_i=0, ack_o(before)=0, wb_acc=0, !ack_o=1, result=0
+ACK_EVAL @5 ns | cyc_i=0, stb_i=0, ack_o=x, wb_acc=0, !ack_o=x, result=0
+UVM_INFO ../sv/wish_monitor.sv(31) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] RESET Deasserted  Starting MONITOR
+UVM_INFO ../sv/wish_driver.sv(21) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting DRIVER
+ACK_EVAL @15 ns | cyc_i=0, stb_i=0, ack_o=0, wb_acc=0, !ack_o=1, result=0
 UVM_INFO ../sv/wish_driver.sv(91) @ 20 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
@@ -704,26 +713,25 @@ req                            wish_packet  -     @3647
   sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
 ----------------------------------------------------------------------------------------------------------
 
-ACK_GEN @25 ns: cyc_i=1 stb_i=1 ack_o=0
-ACK_EVAL @25 ns | cyc_i=1, stb_i=1, ack_o(before)=0, wb_acc=1, !ack_o=1, result=1
-UVM_INFO ../sv/wish_monitor.sv(63) @ 25 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
+ACK_EVAL @25 ns | cyc_i=1, stb_i=1, ack_o=0, wb_acc=1, !ack_o=1, result=1
+UVM_INFO ../sv/wish_monitor.sv(69) @ 25 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3775     
+wpkt         wish_packet  -     @3768     
   operation  op_t         32    WRITE     
   adr_i      integral     2     'b0       
   dat_i      integral     8     'b11000000
-  cyc_i      integral     1     'h0       
-  stb_i      integral     1     'h0       
-  we_i       integral     1     'h0       
+  cyc_i      integral     1     'h1       
+  stb_i      integral     1     'h1       
+  we_i       integral     1     'h1       
 ------------------------------------------
 
 UVM_INFO ../sv/wish_driver.sv(91) @ 30 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3755                                                   
+req                            wish_packet  -     @3771                                                   
   operation                    op_t         32    WRITE                                                   
   adr_i                        integral     2     'b10                                                    
   dat_i                        integral     8     'b11111111                                              
@@ -737,25 +745,25 @@ req                            wish_packet  -     @3755
   sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
 ----------------------------------------------------------------------------------------------------------
 
-ACK_GEN @35 ns: cyc_i=1 stb_i=1 ack_o=0
-ACK_EVAL @35 ns | cyc_i=1, stb_i=1, ack_o(before)=0, wb_acc=1, !ack_o=1, result=1
-UVM_INFO ../sv/wish_monitor.sv(63) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
+ACK_EVAL @35 ns | cyc_i=1, stb_i=1, ack_o=1, wb_acc=1, !ack_o=0, result=0
+ACK_EVAL @45 ns | cyc_i=1, stb_i=1, ack_o=0, wb_acc=1, !ack_o=1, result=1
+UVM_INFO ../sv/wish_monitor.sv(69) @ 45 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3787     
+wpkt         wish_packet  -     @3721     
   operation  op_t         32    WRITE     
   adr_i      integral     2     'b10      
   dat_i      integral     8     'b11111111
-  cyc_i      integral     1     'h0       
-  stb_i      integral     1     'h0       
-  we_i       integral     1     'h0       
+  cyc_i      integral     1     'h1       
+  stb_i      integral     1     'h1       
+  we_i       integral     1     'h1       
 ------------------------------------------
 
-UVM_INFO ../sv/wish_sequence.sv(35) @ 35 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 35 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(51) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 2
-UVM_INFO ../sv/wish_monitor.sv(44) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 2
+UVM_INFO ../sv/wish_sequence.sv(35) @ 50 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 50 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/wish_driver.sv(51) @ 50 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 2
+UVM_INFO ../sv/wish_monitor.sv(47) @ 50 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 2
 
 --- UVM Report catcher Summary ---
 
@@ -770,7 +778,7 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   20
+UVM_INFO :   21
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -783,9 +791,9 @@ UVM_FATAL :    0
 [test_write_seq]     3
 [wish_agent]     1
 [wish_driver]     5
-[wish_monitor]     5
+[wish_monitor]     6
 [wish_sequencer]     1
-Simulation complete via $finish(1) at time 35 NS + 51
+Simulation complete via $finish(1) at time 50 NS + 47
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 12, 2025 at 19:34:34 PKT  (total: 00:00:02)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 13, 2025 at 00:51:10 PKT  (total: 00:00:02)

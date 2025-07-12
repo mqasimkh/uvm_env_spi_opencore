@@ -30,7 +30,7 @@ class wish_sequence extends uvm_sequence#(wish_packet);
       phase = starting_phase;
     `endif
     if (phase != null) begin
-      // #50;
+      #15;
       phase.drop_objection(this, get_type_name());
       `uvm_info(get_type_name(), "OBJECTION DROPPED", UVM_MEDIUM)
     end
