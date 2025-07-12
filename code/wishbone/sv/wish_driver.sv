@@ -55,23 +55,26 @@ class wish_driver extends uvm_driver #(wish_packet);
 
     task read_tr (wish_packet req);
         vif.adr_i = req.adr_i;
-        vif.dat_i = req.dat_i;
+        //vif.dat_i = req.dat_i;
         req.cyc_i = 1;
         req.stb_i = 1;
+        req.we_i = 0;
         vif.cyc_i = req.cyc_i;
         vif.stb_i = req.stb_i;
+        vif.we_i = req.we_i;
         `uvm_info(get_type_name(), $sformatf("READ Packet SENT: \n%s", req.sprint()), UVM_LOW)
             n_wpkt++;
     endtask: read_tr
-
 
     task write_tr (wish_packet req);
         vif.adr_i = req.adr_i;
         vif.dat_i = req.dat_i;
         req.cyc_i = 1;
         req.stb_i = 1;
+        req.we_i = 1;
         vif.cyc_i = req.cyc_i;
         vif.stb_i = req.stb_i;
+        vif.we_i = req.we_i;
         `uvm_info(get_type_name(), $sformatf("WRITE Packet SENT: \n%s", req.sprint()), UVM_LOW)
             n_wpkt++;
     endtask: write_tr

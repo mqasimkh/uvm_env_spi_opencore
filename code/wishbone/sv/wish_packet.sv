@@ -18,8 +18,8 @@ class wish_packet extends uvm_sequence_item;
 
     `uvm_object_utils_begin(wish_packet)
         `uvm_field_enum(op_t, operation, UVM_ALL_ON)
-        `uvm_field_int(adr_i, UVM_ALL_ON)
-        `uvm_field_int(dat_i, UVM_ALL_ON)
+        `uvm_field_int(adr_i, UVM_ALL_ON + UVM_BIN)
+        `uvm_field_int(dat_i, UVM_ALL_ON + UVM_BIN)
         
         // `uvm_field_int(clk_i, UVM_ALL_ON)
         // `uvm_field_int(rst_i, UVM_ALL_ON)

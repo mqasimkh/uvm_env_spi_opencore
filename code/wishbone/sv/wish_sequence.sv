@@ -49,7 +49,7 @@ class test_sequence extends wish_sequence;
         super.new(name);
     endfunction: new
 
-    virtual task body();
+    task body();
         `uvm_info(get_type_name(), "Running Sequence test_sequence ...", UVM_LOW)
         repeat(5) begin
             `uvm_do(req)
@@ -57,3 +57,25 @@ class test_sequence extends wish_sequence;
     endtask: body
 
 endclass: test_sequence
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////                         test_write                                         //////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class test_write_seq extends wish_sequence;
+  `uvm_object_utils(test_write_seq)
+
+  function new (string name = "test_write");
+    super.new(name);
+  endfunction: new
+
+  task body();
+    `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 2'b01;
+      req.dat_i = 8'b11111111;
+      `uvm_send(req)
+  endtask: body
+
+endclass: test_write_seq

@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 12, 2025 at 12:43:43 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 12, 2025 at 13:29:30 PKT
 xrun
 	-access +rwc
 	-uvm
@@ -193,9 +193,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file '../sv/wish_monitor.sv' is newer than expected.
-	expected: Sat Jul 12 12:09:33 2025
-	actual:   Sat Jul 12 12:43:41 2025
+Recompiling... reason: file '../sv/wish_packet.sv' is newer than expected.
+	expected: Sat Jul 12 12:33:51 2025
+	actual:   Sat Jul 12 13:29:26 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -532,10 +532,8 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.tb_top:sv <0x07b04f9c>
-			streams: 552, words: 618004
-		worklib.wish_if:sv <0x759a5e04>
-			streams:   1, words:   345
+		worklib.tb_top:sv <0x51e62f61>
+			streams: 574, words: 638502
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -543,17 +541,17 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                       1       1
 		Interfaces:                    1       1
 		Verilog packages:              5       5
-		Registers:                 13984   10202
+		Registers:                 14029   10222
 		Scalar wires:                  2       -
 		Named events:                  4      12
 		Always blocks:                 1       1
-		Initial blocks:              286     156
+		Initial blocks:              289     157
 		Parallel blocks:              26      27
 		Cont. assignments:             1       1
 		Pseudo assignments:            1       -
 		Assertions:                    2       2
-		SV Class declarations:       199     313
-		SV Class specializations:    382     382
+		SV Class declarations:       200     314
+		SV Class specializations:    384     384
 	Writing initial simulation snapshot: worklib.tb_top:sv
 DEFINE std       ./STD
 |
@@ -626,7 +624,7 @@ CDNS-UVM-1.1d (23.09-s006)
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO @ 0: reporter [RNTST] Running test spi_test...
-UVM_INFO spi_test.sv(15) @ 0: uvm_test_top [spi_test] BUILD PHASE OF RUNNING ...
+UVM_INFO spi_test.sv(13) @ 0: uvm_test_top [spi_test] BUILD PHASE OF RUNNING ...
 UVM_INFO spi_env.sv(13) @ 0: uvm_test_top.spi [spi_env] BUILD PHASE OF RUNNING ...
 UVM_INFO ../sv/wish_agent.sv(17) @ 0: uvm_test_top.spi.wishbone.agent [wish_agent] BUILD PHASE RUNNING ...
 UVM_INFO ../sv/wish_sequencer.sv(9) @ 0: uvm_test_top.spi.wishbone.agent.sequencer [wish_sequencer] BUILD PHASE RUNNING ...
@@ -636,175 +634,59 @@ UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 ----------------------------------------------------------------
 Name                         Type                    Size  Value
 ----------------------------------------------------------------
-uvm_test_top                 spi_test                -     @2634
-  spi                        spi_env                 -     @2705
-    wishbone                 wish_env                -     @2737
-      agent                  wish_agent              -     @2770
-        sequencer            wish_sequencer          -     @2964
-          rsp_export         uvm_analysis_export     -     @3022
-          seq_item_export    uvm_seq_item_pull_imp   -     @3570
+uvm_test_top                 spi_test                -     @2638
+  spi                        spi_env                 -     @2709
+    wishbone                 wish_env                -     @2741
+      agent                  wish_agent              -     @2774
+        sequencer            wish_sequencer          -     @2968
+          rsp_export         uvm_analysis_export     -     @3026
+          seq_item_export    uvm_seq_item_pull_imp   -     @3574
           arbitration_queue  array                   0     -    
           lock_queue         array                   0     -    
           num_last_reqs      integral                32    'd1  
           num_last_rsps      integral                32    'd1  
-        wish_driver          wish_driver             -     @2802
-          rsp_port           uvm_analysis_port       -     @2902
-          seq_item_port      uvm_seq_item_pull_port  -     @2851
-        wish_monitor         wish_monitor            -     @2933
+        wish_driver          wish_driver             -     @2806
+          rsp_port           uvm_analysis_port       -     @2906
+          seq_item_port      uvm_seq_item_pull_port  -     @2855
+        wish_monitor         wish_monitor            -     @2937
 ----------------------------------------------------------------
 
 UVM_INFO ../sv/wish_monitor.sv(17) @ 0: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
-UVM_INFO ../sv/wish_sequence.sv(21) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_sequence [test_sequence] OBJECTION RAISED
-UVM_INFO ../sv/wish_sequence.sv(53) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_sequence [test_sequence] Running Sequence test_sequence ...
-UVM_INFO ../sv/wish_driver.sv(86) @ 10: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] IDLE Packet SENT: 
----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                  
----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3636                                                  
-  operation                    op_t         32    IDLE                                                   
-  adr_i                        integral     2     'h0                                                    
-  dat_i                        integral     8     'h5a                                                   
-  stb_i                        integral     1     'h1                                                    
-  we_i                         integral     1     'h0                                                    
-  begin_time                   time         64    10                                                     
-  depth                        int          32    'd2                                                    
-  parent sequence (name)       string       13    test_sequence                                          
-  parent sequence (full name)  string       55    uvm_test_top.spi.wishbone.agent.sequencer.test_sequence
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer              
----------------------------------------------------------------------------------------------------------
+UVM_INFO ../sv/wish_sequence.sv(21) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
+UVM_INFO ../sv/wish_sequence.sv(73) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
+UVM_INFO ../sv/wish_driver.sv(78) @ 10: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
+----------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                   
+----------------------------------------------------------------------------------------------------------
+req                            wish_packet  -     @3640                                                   
+  operation                    op_t         32    WRITE                                                   
+  adr_i                        integral     2     'b1                                                     
+  dat_i                        integral     8     'b11111111                                              
+  stb_i                        integral     1     'h1                                                     
+  we_i                         integral     1     'h1                                                     
+  begin_time                   time         64    10                                                      
+  depth                        int          32    'd2                                                     
+  parent sequence (name)       string       14    test_write_seq                                          
+  parent sequence (full name)  string       56    uvm_test_top.spi.wishbone.agent.sequencer.test_write_seq
+  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
+----------------------------------------------------------------------------------------------------------
 
 UVM_INFO ../sv/wish_monitor.sv(47) @ 15: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
--------------------------------------
-Name         Type         Size  Value
--------------------------------------
-wpkt         wish_packet  -     @3757
-  operation  op_t         32    READ 
-  adr_i      integral     2     'h0  
-  dat_i      integral     8     'h5a 
-  stb_i      integral     1     'h1  
-  we_i       integral     1     'h0  
--------------------------------------
+------------------------------------------
+Name         Type         Size  Value     
+------------------------------------------
+wpkt         wish_packet  -     @3761     
+  operation  op_t         32    WRITE     
+  adr_i      integral     2     'b1       
+  dat_i      integral     8     'b11111111
+  stb_i      integral     1     'h1       
+  we_i       integral     1     'h0       
+------------------------------------------
 
-UVM_INFO ../sv/wish_driver.sv(63) @ 20: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                  
----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3738                                                  
-  operation                    op_t         32    READ                                                   
-  adr_i                        integral     2     'h3                                                    
-  dat_i                        integral     8     'h3c                                                   
-  stb_i                        integral     1     'h1                                                    
-  we_i                         integral     1     'h0                                                    
-  begin_time                   time         64    20                                                     
-  depth                        int          32    'd2                                                    
-  parent sequence (name)       string       13    test_sequence                                          
-  parent sequence (full name)  string       55    uvm_test_top.spi.wishbone.agent.sequencer.test_sequence
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer              
----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(47) @ 25: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
--------------------------------------
-Name         Type         Size  Value
--------------------------------------
-wpkt         wish_packet  -     @3768
-  operation  op_t         32    READ 
-  adr_i      integral     2     'h3  
-  dat_i      integral     8     'h3c 
-  stb_i      integral     1     'h1  
-  we_i       integral     1     'h0  
--------------------------------------
-
-UVM_INFO ../sv/wish_driver.sv(86) @ 30: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] IDLE Packet SENT: 
----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                  
----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3721                                                  
-  operation                    op_t         32    IDLE                                                   
-  adr_i                        integral     2     'h3                                                    
-  dat_i                        integral     8     'hd4                                                   
-  stb_i                        integral     1     'h1                                                    
-  we_i                         integral     1     'h0                                                    
-  begin_time                   time         64    30                                                     
-  depth                        int          32    'd2                                                    
-  parent sequence (name)       string       13    test_sequence                                          
-  parent sequence (full name)  string       55    uvm_test_top.spi.wishbone.agent.sequencer.test_sequence
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer              
----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(47) @ 35: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
--------------------------------------
-Name         Type         Size  Value
--------------------------------------
-wpkt         wish_packet  -     @3770
-  operation  op_t         32    READ 
-  adr_i      integral     2     'h3  
-  dat_i      integral     8     'hd4 
-  stb_i      integral     1     'h1  
-  we_i       integral     1     'h0  
--------------------------------------
-
-UVM_INFO ../sv/wish_driver.sv(86) @ 40: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] IDLE Packet SENT: 
----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                  
----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3748                                                  
-  operation                    op_t         32    IDLE                                                   
-  adr_i                        integral     2     'h2                                                    
-  dat_i                        integral     8     'h21                                                   
-  stb_i                        integral     1     'h1                                                    
-  we_i                         integral     1     'h0                                                    
-  begin_time                   time         64    40                                                     
-  depth                        int          32    'd2                                                    
-  parent sequence (name)       string       13    test_sequence                                          
-  parent sequence (full name)  string       55    uvm_test_top.spi.wishbone.agent.sequencer.test_sequence
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer              
----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(47) @ 45: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
--------------------------------------
-Name         Type         Size  Value
--------------------------------------
-wpkt         wish_packet  -     @3771
-  operation  op_t         32    READ 
-  adr_i      integral     2     'h2  
-  dat_i      integral     8     'h21 
-  stb_i      integral     1     'h1  
-  we_i       integral     1     'h0  
--------------------------------------
-
-UVM_INFO ../sv/wish_driver.sv(63) @ 50: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                  
----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3704                                                  
-  operation                    op_t         32    READ                                                   
-  adr_i                        integral     2     'h3                                                    
-  dat_i                        integral     8     'h23                                                   
-  stb_i                        integral     1     'h1                                                    
-  we_i                         integral     1     'h0                                                    
-  begin_time                   time         64    50                                                     
-  depth                        int          32    'd2                                                    
-  parent sequence (name)       string       13    test_sequence                                          
-  parent sequence (full name)  string       55    uvm_test_top.spi.wishbone.agent.sequencer.test_sequence
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer              
----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(47) @ 55: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
--------------------------------------
-Name         Type         Size  Value
--------------------------------------
-wpkt         wish_packet  -     @3772
-  operation  op_t         32    READ 
-  adr_i      integral     2     'h3  
-  dat_i      integral     8     'h23 
-  stb_i      integral     1     'h1  
-  we_i       integral     1     'h0  
--------------------------------------
-
-UVM_INFO ../sv/wish_sequence.sv(35) @ 55: uvm_test_top.spi.wishbone.agent.sequencer@@test_sequence [test_sequence] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 55: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(91) @ 55: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 5
-UVM_INFO ../sv/wish_monitor.sv(54) @ 55: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 5
+UVM_INFO ../sv/wish_sequence.sv(35) @ 15: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 15: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/wish_driver.sv(94) @ 15: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 1
+UVM_INFO ../sv/wish_monitor.sv(54) @ 15: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 1
 
 --- UVM Report catcher Summary ---
 
@@ -819,7 +701,7 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   25
+UVM_INFO :   17
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -829,12 +711,12 @@ UVM_FATAL :    0
 [UVMTOP]     1
 [spi_env]     1
 [spi_test]     1
-[test_sequence]     3
+[test_write_seq]     3
 [wish_agent]     1
-[wish_driver]     7
-[wish_monitor]     8
+[wish_driver]     3
+[wish_monitor]     4
 [wish_sequencer]     1
-Simulation complete via $finish(1) at time 55 NS + 50
+Simulation complete via $finish(1) at time 15 NS + 50
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 12, 2025 at 12:43:46 PKT  (total: 00:00:03)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 12, 2025 at 13:29:32 PKT  (total: 00:00:02)
