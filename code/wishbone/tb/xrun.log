@@ -1,18 +1,19 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 12, 2025 at 15:28:20 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 12, 2025 at 19:34:32 PKT
 xrun
 	-access +rwc
 	-uvm
 	-f file.f
+		-timescale 1ns/100ps
 		-incdir ../sv
 		-incdir ../tb
 		-incdir ../../spi_core
 		../sv/wish_pkg.sv
+		../sv/wish_if.sv
 		../../spi_core/fifo4.v
 		../../spi_core/simple_spi_top.v
 		tb_top.sv
 		+UVM_VERBOSITY=UVM_HIGH
-	-gui
 
    User defined plus("+") options:
 	+UVM_VERBOSITY=UVM_HIGH
@@ -198,8 +199,8 @@ DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
 Recompiling... reason: file '../sv/wish_driver.sv' is newer than expected.
-	expected: Sat Jul 12 15:24:22 2025
-	actual:   Sat Jul 12 15:26:58 2025
+	expected: Sat Jul 12 19:10:31 2025
+	actual:   Sat Jul 12 19:33:43 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -349,14 +350,12 @@ xmvlog: *W,NONPRT (../sv/wish_driver.sv,21|54): non-printable character (0x80) i
                                                        |
 xmvlog: *W,NONPRT (../sv/wish_driver.sv,21|55): non-printable character (0x94) ignored.
 (`include file: ../sv/wish_driver.sv line 21, file: ../sv/wish_pkg.sv line 10)
-package wish_pkg;
-               |
-xmvlog: *W,TSNSPK (../sv/wish_pkg.sv,1|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
 	package worklib.wish_pkg:sv
-		errors: 0, warnings: 4
-file: tb_top.sv
+		errors: 0, warnings: 3
+file: ../sv/wish_if.sv
 	interface worklib.wish_if:sv
 		errors: 0, warnings: 0
+file: tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
 xmvlog: *W,SPDUSD: Include directory ../tb given but not used.
@@ -554,10 +553,10 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.tb_top:sv <0x216746e9>
-			streams: 586, words: 651178
-		worklib.wish_if:sv <0x43bc8f56>
-			streams:   2, words:   702
+		worklib.tb_top:sv <0x28528918>
+			streams: 587, words: 657891
+		worklib.wish_if:sv <0x228286b0>
+			streams:   2, words:   688
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -565,20 +564,21 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                       4       3
 		Interfaces:                    1       1
 		Verilog packages:              5       5
-		Registers:                 14054   10243
+		Registers:                 14057   10246
 		Scalar wires:                 46       -
 		Expanded wires:                2       1
 		Vectored wires:               17       -
 		Named events:                  4      12
 		Always blocks:                18      14
-		Initial blocks:              290     158
+		Initial blocks:              292     160
 		Parallel blocks:              26      27
 		Cont. assignments:            22      35
-		Pseudo assignments:           17       -
+		Pseudo assignments:           16       -
 		Assertions:                    2       2
 		SV Class declarations:       200     314
 		SV Class specializations:    384     384
 		Process Clocks:               16       3
+		Simulation timescale:      100ps
 	Writing initial simulation snapshot: worklib.tb_top:sv
 DEFINE std       ./STD
 |
@@ -625,12 +625,8 @@ xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmsim: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+Loading snapshot worklib.tb_top:sv .................... Done
 SVSEED default: 1
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/xcelium/files/xmsimrc
 xcelium> source /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
 xcelium> run
@@ -654,63 +650,112 @@ CDNS-UVM-1.1d (23.09-s006)
 
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
-UVM_INFO @ 0: reporter [RNTST] Running test spi_test...
-UVM_INFO spi_test.sv(13) @ 0: uvm_test_top [spi_test] BUILD PHASE OF RUNNING ...
-UVM_INFO spi_env.sv(13) @ 0: uvm_test_top.spi [spi_env] BUILD PHASE OF RUNNING ...
-UVM_INFO ../sv/wish_agent.sv(17) @ 0: uvm_test_top.spi.wishbone.agent [wish_agent] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_sequencer.sv(9) @ 0: uvm_test_top.spi.wishbone.agent.sequencer [wish_sequencer] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_driver.sv(12) @ 0: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_monitor.sv(13) @ 0: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] BUILD PHASE RUNNING ...
-UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+UVM_INFO @ 0 ns: reporter [RNTST] Running test spi_test...
+UVM_INFO spi_test.sv(13) @ 0 ns: uvm_test_top [spi_test] BUILD PHASE OF RUNNING ...
+UVM_INFO spi_env.sv(13) @ 0 ns: uvm_test_top.spi [spi_env] BUILD PHASE OF RUNNING ...
+UVM_INFO ../sv/wish_agent.sv(17) @ 0 ns: uvm_test_top.spi.wishbone.agent [wish_agent] BUILD PHASE RUNNING ...
+UVM_INFO ../sv/wish_sequencer.sv(9) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer [wish_sequencer] BUILD PHASE RUNNING ...
+UVM_INFO ../sv/wish_driver.sv(12) @ 0 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] BUILD PHASE RUNNING ...
+UVM_INFO ../sv/wish_monitor.sv(13) @ 0 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] BUILD PHASE RUNNING ...
+UVM_INFO @ 0 ns: reporter [UVMTOP] UVM testbench topology:
 ----------------------------------------------------------------
 Name                         Type                    Size  Value
 ----------------------------------------------------------------
-uvm_test_top                 spi_test                -     @2642
-  spi                        spi_env                 -     @2713
-    wishbone                 wish_env                -     @2745
-      agent                  wish_agent              -     @2778
-        sequencer            wish_sequencer          -     @2972
-          rsp_export         uvm_analysis_export     -     @3030
-          seq_item_export    uvm_seq_item_pull_imp   -     @3578
+uvm_test_top                 spi_test                -     @2645
+  spi                        spi_env                 -     @2716
+    wishbone                 wish_env                -     @2748
+      agent                  wish_agent              -     @2781
+        sequencer            wish_sequencer          -     @2975
+          rsp_export         uvm_analysis_export     -     @3033
+          seq_item_export    uvm_seq_item_pull_imp   -     @3581
           arbitration_queue  array                   0     -    
           lock_queue         array                   0     -    
           num_last_reqs      integral                32    'd1  
           num_last_rsps      integral                32    'd1  
-        wish_driver          wish_driver             -     @2810
-          rsp_port           uvm_analysis_port       -     @2910
-          seq_item_port      uvm_seq_item_pull_port  -     @2859
-        wish_monitor         wish_monitor            -     @2941
+        wish_driver          wish_driver             -     @2813
+          rsp_port           uvm_analysis_port       -     @2913
+          seq_item_port      uvm_seq_item_pull_port  -     @2862
+        wish_monitor         wish_monitor            -     @2944
 ----------------------------------------------------------------
 
-UVM_INFO ../sv/wish_monitor.sv(17) @ 0: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
-stop -create -name Randomize -randomize
-Created stop Randomize
-
-UVM_INFO ../sv/wish_sequence.sv(21) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
-UVM_INFO ../sv/wish_sequence.sv(73) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
-UVM_INFO ../sv/wish_driver.sv(21) @ 10: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting driver
-UVM_INFO ../sv/wish_driver.sv(86) @ 20: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
+UVM_INFO ../sv/wish_monitor.sv(17) @ 0 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
+UVM_INFO ../sv/wish_sequence.sv(21) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
+UVM_INFO ../sv/wish_sequence.sv(73) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
+ACK_GEN @5 ns: cyc_i=0 stb_i=0 ack_o=x
+ACK_EVAL @5 ns | cyc_i=0, stb_i=0, ack_o(before)=x, wb_acc=0, !ack_o=x, result=0
+UVM_INFO ../sv/wish_driver.sv(21) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting driver
+ACK_GEN @15 ns: cyc_i=0 stb_i=0 ack_o=0
+ACK_EVAL @15 ns | cyc_i=0, stb_i=0, ack_o(before)=0, wb_acc=0, !ack_o=1, result=0
+UVM_INFO ../sv/wish_driver.sv(91) @ 20 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3644                                                   
+req                            wish_packet  -     @3647                                                   
   operation                    op_t         32    WRITE                                                   
-  adr_i                        integral     2     'b1                                                     
-  dat_i                        integral     8     'b11111111                                              
+  adr_i                        integral     2     'b0                                                     
+  dat_i                        integral     8     'b11000000                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
   we_i                         integral     1     'h1                                                     
-  begin_time                   time         64    20                                                      
+  begin_time                   time         64    20 ns                                                   
   depth                        int          32    'd2                                                     
   parent sequence (name)       string       14    test_write_seq                                          
   parent sequence (full name)  string       56    uvm_test_top.spi.wishbone.agent.sequencer.test_write_seq
   sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
 ----------------------------------------------------------------------------------------------------------
 
-UVM_INFO ../sv/wish_sequence.sv(35) @ 125: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 125: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(45) @ 125: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 1
-UVM_INFO ../sv/wish_monitor.sv(53) @ 125: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 0
+ACK_GEN @25 ns: cyc_i=1 stb_i=1 ack_o=0
+ACK_EVAL @25 ns | cyc_i=1, stb_i=1, ack_o(before)=0, wb_acc=1, !ack_o=1, result=1
+UVM_INFO ../sv/wish_monitor.sv(63) @ 25 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
+------------------------------------------
+Name         Type         Size  Value     
+------------------------------------------
+wpkt         wish_packet  -     @3775     
+  operation  op_t         32    WRITE     
+  adr_i      integral     2     'b0       
+  dat_i      integral     8     'b11000000
+  cyc_i      integral     1     'h0       
+  stb_i      integral     1     'h0       
+  we_i       integral     1     'h0       
+------------------------------------------
+
+UVM_INFO ../sv/wish_driver.sv(91) @ 30 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
+----------------------------------------------------------------------------------------------------------
+Name                           Type         Size  Value                                                   
+----------------------------------------------------------------------------------------------------------
+req                            wish_packet  -     @3755                                                   
+  operation                    op_t         32    WRITE                                                   
+  adr_i                        integral     2     'b10                                                    
+  dat_i                        integral     8     'b11111111                                              
+  cyc_i                        integral     1     'h1                                                     
+  stb_i                        integral     1     'h1                                                     
+  we_i                         integral     1     'h1                                                     
+  begin_time                   time         64    30 ns                                                   
+  depth                        int          32    'd2                                                     
+  parent sequence (name)       string       14    test_write_seq                                          
+  parent sequence (full name)  string       56    uvm_test_top.spi.wishbone.agent.sequencer.test_write_seq
+  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
+----------------------------------------------------------------------------------------------------------
+
+ACK_GEN @35 ns: cyc_i=1 stb_i=1 ack_o=0
+ACK_EVAL @35 ns | cyc_i=1, stb_i=1, ack_o(before)=0, wb_acc=1, !ack_o=1, result=1
+UVM_INFO ../sv/wish_monitor.sv(63) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
+------------------------------------------
+Name         Type         Size  Value     
+------------------------------------------
+wpkt         wish_packet  -     @3787     
+  operation  op_t         32    WRITE     
+  adr_i      integral     2     'b10      
+  dat_i      integral     8     'b11111111
+  cyc_i      integral     1     'h0       
+  stb_i      integral     1     'h0       
+  we_i       integral     1     'h0       
+------------------------------------------
+
+UVM_INFO ../sv/wish_sequence.sv(35) @ 35 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 35 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/wish_driver.sv(51) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 2
+UVM_INFO ../sv/wish_monitor.sv(44) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 2
 
 --- UVM Report catcher Summary ---
 
@@ -725,7 +770,7 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   17
+UVM_INFO :   20
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -737,127 +782,10 @@ UVM_FATAL :    0
 [spi_test]     1
 [test_write_seq]     3
 [wish_agent]     1
-[wish_driver]     4
-[wish_monitor]     3
+[wish_driver]     5
+[wish_monitor]     5
 [wish_sequencer]     1
-Simulation complete via $finish(1) at time 125 NS + 47
+Simulation complete via $finish(1) at time 35 NS + 51
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm tb_top.w_if.clk_i tb_top.w_if.rst_i tb_top.w_if.adr_i tb_top.w_if.dat_i tb_top.w_if.dat_o tb_top.w_if.ack_o tb_top.dut.clk_i tb_top.dut.rst_i tb_top.dut.dat_i tb_top.dut.dat_o tb_top.dut.ack_o tb_top.dut.adr_i
-Created probe 1
-xcelium> reset
-SVSEED default: 1
-xmsim: *W,SCPINV: Dynamic scope `uvm_pkg::uvm_root@952_1.run_test' no longer valid - traversing to last valid scope `tb_top'.
-Loaded snapshot worklib.tb_top:sv
-xcelium> run
-----------------------------------------------------------------
-CDNS-UVM-1.1d (23.09-s006)
-(C) 2007-2013 Mentor Graphics Corporation
-(C) 2007-2013 Cadence Design Systems, Inc.
-(C) 2006-2013 Synopsys, Inc.
-(C) 2011-2013 Cypress Semiconductor Corp.
-----------------------------------------------------------------
-
-  ***********       IMPORTANT RELEASE NOTES         ************
-
-  You are using a version of the UVM library that has been compiled
-  with `UVM_NO_DEPRECATED undefined.
-  See http://www.eda.org/svdb/view.php?id=3313 for more details.
-
-  You are using a version of the UVM library that has been compiled
-  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
-  See http://www.eda.org/svdb/view.php?id=3770 for more details.
-
-      (Specify +UVM_NO_RELNOTES to turn off this notice)
-
-UVM_INFO @ 0: reporter [RNTST] Running test spi_test...
-UVM_INFO spi_test.sv(13) @ 0: uvm_test_top [spi_test] BUILD PHASE OF RUNNING ...
-UVM_INFO spi_env.sv(13) @ 0: uvm_test_top.spi [spi_env] BUILD PHASE OF RUNNING ...
-UVM_INFO ../sv/wish_agent.sv(17) @ 0: uvm_test_top.spi.wishbone.agent [wish_agent] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_sequencer.sv(9) @ 0: uvm_test_top.spi.wishbone.agent.sequencer [wish_sequencer] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_driver.sv(12) @ 0: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] BUILD PHASE RUNNING ...
-UVM_INFO ../sv/wish_monitor.sv(13) @ 0: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] BUILD PHASE RUNNING ...
-UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
-----------------------------------------------------------------
-Name                         Type                    Size  Value
-----------------------------------------------------------------
-uvm_test_top                 spi_test                -     @2642
-  spi                        spi_env                 -     @2713
-    wishbone                 wish_env                -     @2745
-      agent                  wish_agent              -     @2778
-        sequencer            wish_sequencer          -     @2972
-          rsp_export         uvm_analysis_export     -     @3030
-          seq_item_export    uvm_seq_item_pull_imp   -     @3578
-          arbitration_queue  array                   0     -    
-          lock_queue         array                   0     -    
-          num_last_reqs      integral                32    'd1  
-          num_last_rsps      integral                32    'd1  
-        wish_driver          wish_driver             -     @2810
-          rsp_port           uvm_analysis_port       -     @2910
-          seq_item_port      uvm_seq_item_pull_port  -     @2859
-        wish_monitor         wish_monitor            -     @2941
-----------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(17) @ 0: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
-UVM_INFO ../sv/wish_sequence.sv(21) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
-UVM_INFO ../sv/wish_sequence.sv(73) @ 0: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
-UVM_INFO ../sv/wish_driver.sv(21) @ 10: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting driver
-UVM_INFO ../sv/wish_driver.sv(86) @ 20: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
-----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                   
-----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3644                                                   
-  operation                    op_t         32    WRITE                                                   
-  adr_i                        integral     2     'b1                                                     
-  dat_i                        integral     8     'b11111111                                              
-  cyc_i                        integral     1     'h1                                                     
-  stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h1                                                     
-  begin_time                   time         64    20                                                      
-  depth                        int          32    'd2                                                     
-  parent sequence (name)       string       14    test_write_seq                                          
-  parent sequence (full name)  string       56    uvm_test_top.spi.wishbone.agent.sequencer.test_write_seq
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
-----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_sequence.sv(35) @ 125: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 125: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(45) @ 125: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 1
-UVM_INFO ../sv/wish_monitor.sv(53) @ 125: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 0
-
---- UVM Report catcher Summary ---
-
-
-Number of demoted UVM_FATAL reports  :    0
-Number of demoted UVM_ERROR reports  :    0
-Number of demoted UVM_WARNING reports:    0
-Number of caught UVM_FATAL reports   :    0
-Number of caught UVM_ERROR reports   :    0
-Number of caught UVM_WARNING reports :    0
-
---- UVM Report Summary ---
-
-** Report counts by severity
-UVM_INFO :   17
-UVM_WARNING :    0
-UVM_ERROR :    0
-UVM_FATAL :    0
-** Report counts by id
-[RNTST]     1
-[TEST_DONE]     1
-[UVMTOP]     1
-[spi_env]     1
-[spi_test]     1
-[test_write_seq]     3
-[wish_agent]     1
-[wish_driver]     4
-[wish_monitor]     3
-[wish_sequencer]     1
-Simulation complete via $finish(1) at time 125 NS + 47
-/home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
-xcelium> ^C
 xcelium> exit
-...Regained control from SimVision
--------------------------------------
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 12, 2025 at 15:30:53 PKT  (total: 00:02:33)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 12, 2025 at 19:34:34 PKT  (total: 00:00:02)

@@ -20,6 +20,12 @@ class wish_driver extends uvm_driver #(wish_packet);
         wait (vif.rst_i == 1);
         `uvm_info(get_type_name(), "RESET Deasserted — Starting driver", UVM_LOW)
 
+        vif.cyc_i  = 0;
+        vif.stb_i  = 0;
+        vif.we_i   = 0;
+        vif.adr_i  = 0;
+        vif.dat_i  = 0;
+
         forever begin
             @(negedge vif.clk_i);
             seq_item_port.get_next_item(req);
@@ -56,7 +62,6 @@ class wish_driver extends uvm_driver #(wish_packet);
             req.stb_i = 1;
             vif.cyc_i = req.cyc_i;
             vif.stb_i = req.stb_i;
-
         `uvm_info(get_type_name(), $sformatf("Packet SENT: \n%s", req.sprint()), UVM_LOW)
         n_wpkt++;
     endtask: send_packets

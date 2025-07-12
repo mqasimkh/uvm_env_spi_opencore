@@ -20,12 +20,9 @@ set id [waveform add -signals [subst  {
 	} ]]
 waveform format $id -bgcolor #999999
 set id [waveform add -signals [subst  {
-	{[format {tb_top.w_if.adr_i[2:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
 	{[format {tb_top.w_if.dat_i[7:0]}]}
 	} ]]
-waveform format $id -bgcolor #999999
+waveform format $id -radix %b -bgcolor #999999
 set id [waveform add -signals [subst  {
 	{[format {tb_top.w_if.dat_o[7:0]}]}
 	} ]]
@@ -45,7 +42,7 @@ waveform format $id -color #00ff00
 set id [waveform add -signals [subst  {
 	{[format {tb_top.dut.dat_i[7:0]}]}
 	} ]]
-waveform format $id -color #00ff00
+waveform format $id -radix %b -color #00ff00
 set id [waveform add -signals [subst  {
 	{[format {tb_top.dut.dat_o[7:0]}]}
 	} ]]
@@ -56,6 +53,15 @@ set id [waveform add -signals [subst  {
 waveform format $id -color #00ff00
 set id [waveform add -signals [subst  {
 	{[format {tb_top.dut.adr_i[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.cyc_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.stb_i}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.we_i}]}
 	} ]]
 
 waveform xview limits 0 125ns

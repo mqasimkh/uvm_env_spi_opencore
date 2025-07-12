@@ -30,7 +30,7 @@ class wish_sequence extends uvm_sequence#(wish_packet);
       phase = starting_phase;
     `endif
     if (phase != null) begin
-       #100;
+      // #50;
       phase.drop_objection(this, get_type_name());
       `uvm_info(get_type_name(), "OBJECTION DROPPED", UVM_MEDIUM)
     end
@@ -73,10 +73,16 @@ class test_write_seq extends wish_sequence;
     `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
       `uvm_create(req)
       req.operation = WRITE;
-      req.adr_i = 2'b01;
-      req.dat_i = 8'b11111111;
-
+      req.adr_i = 3'b00;
+      req.dat_i = 8'b11000000;
       `uvm_send(req)
+
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b10;
+      req.dat_i = 8'b11111111;
+      `uvm_send(req)
+
   endtask: body
 
 endclass: test_write_seq

@@ -87,7 +87,6 @@ module simple_spi #(
   output wire       mosi_o,        // MasterOut SlaveIN
   input  wire       miso_i         // MasterIn SlaveOut
 );
-
   //
   // Module body
   //
@@ -157,12 +156,15 @@ module simple_spi #(
   assign rfre = wb_acc & (adr_i == 3'b010) & ack_o & ~we_i;
 
   // ack_o
-  always @(posedge clk_i)
+  always @(posedge clk_i) begin
+   $display("ACK_GEN @%0t: cyc_i=%b stb_i=%b ack_o=%b", $time, cyc_i, stb_i, ack_o);
     if (rst_i)
       ack_o <= 1'b0;
     else
       ack_o <= wb_acc & !ack_o;
-
+    $display("ACK_EVAL @%0t | cyc_i=%b, stb_i=%b, ack_o(before)=%b, wb_acc=%b, !ack_o=%b, result=%b",
+      $time, cyc_i, stb_i, ack_o, wb_acc, !ack_o, wb_acc & !ack_o);
+  end
   // decode Serial Peripheral Control Register
   wire       spie = spcr[7];   // Interrupt enable bit
   wire       spe  = spcr[6];   // System Enable bit

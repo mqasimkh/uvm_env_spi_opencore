@@ -29,28 +29,40 @@ class wish_monitor extends uvm_monitor;
         
         @(posedge vif.clk_i);
         forever begin
-            @(posedge vif.ack_o);
-            //@(posedge vif.clk_i);
+            
+            //@(posedge vif.ack_o);
+            @(posedge vif.clk_i);
             if (vif.cyc_i && vif.stb_i) begin
             wpkt = wish_packet::type_id::create("wpkt", this);
-
-            if (vif.we_i)
-                wpkt.operation = WRITE;
-            else
-                wpkt.operation = READ;
-
-            wpkt.adr_i = vif.adr_i;
-            wpkt.dat_i = vif.dat_i;
-            wpkt.dat_o = vif.dat_o;
-
-            `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
-            n_wpkt++;
+            collect_packet(wpkt);
             end
+        
         end
     endtask: run_phase
 
     function void report_phase(uvm_phase phase);
         `uvm_info(get_type_name(), $sformatf("MONITOR : Wishbone Packets Collected : %0d", n_wpkt), UVM_LOW)
     endfunction : report_phase
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                        monitor_methods                                     ///////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    task collect_packet(wish_packet wpkt);
+
+        if (vif.we_i)
+            wpkt.operation = WRITE;
+        else
+            wpkt.operation = READ;
+
+        wpkt.adr_i = vif.adr_i;
+        wpkt.dat_i = vif.dat_i;
+        wpkt.dat_o = vif.dat_o;
+
+        `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
+        n_wpkt++;
+
+    endtask: collect_packet
 
 endclass: wish_monitor
