@@ -21,6 +21,8 @@ class wish_driver extends uvm_driver #(wish_packet);
             @(negedge vif.clk_i);
             seq_item_port.get_next_item(req);
             checking_packets(req);
+            //#5ns;
+            @(posedge vif.clk_i);
             seq_item_port.item_done(req);
         end
     endtask: run_phase
@@ -33,6 +35,13 @@ class wish_driver extends uvm_driver #(wish_packet);
     task checking_packets(wish_packet req);
             vif.adr_i = req.adr_i;
             vif.dat_i = req.dat_i;
+
+            req.cyc_i = 1;
+            req.stb_i = 1;
+
+            vif.cyc_i = req.cyc_i;
+            vif.stb_i = req.stb_i;
+
         `uvm_info(get_type_name(), $sformatf("Packet SENT: \n%s", req.sprint()), UVM_LOW)
         n_wpkt++;
     endtask: checking_packets

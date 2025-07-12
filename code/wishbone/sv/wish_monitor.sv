@@ -26,15 +26,22 @@ class wish_monitor extends uvm_monitor;
 
         if (vif == null)
         `uvm_fatal(get_type_name(), "Monitor VIF is NULL in run_phase!")
-
+        
         @(posedge vif.clk_i);
         forever begin
              @(posedge vif.clk_i);
+            if (vif.cyc_i && vif.stb_i) begin
             wpkt = wish_packet::type_id::create("wpkt", this);
+
             wpkt.adr_i = vif.adr_i;
             wpkt.dat_i = vif.dat_i;
+
+            wpkt.cyc_i = vif.cyc_i;
+            wpkt.stb_i = vif.stb_i;
+
             `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
             n_wpkt++;
+            end
         end
     endtask: run_phase
 
