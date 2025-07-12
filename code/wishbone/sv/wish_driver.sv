@@ -20,11 +20,11 @@ class wish_driver extends uvm_driver #(wish_packet);
         wait (vif.rst_i == 0);
         `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
 
-        vif.cyc_i  = 0;
-        vif.stb_i  = 0;
-        vif.we_i   = 0;
-        vif.adr_i  = 0;
-        vif.dat_i  = 0;
+        // vif.cyc_i  = 0;
+        // vif.stb_i  = 0;
+        // vif.we_i   = 0;
+        // vif.adr_i  = 0;
+        // vif.dat_i  = 0;
 
         forever begin
             @(negedge vif.clk_i);
@@ -37,8 +37,8 @@ class wish_driver extends uvm_driver #(wish_packet);
                 write_tr(req);
             else
                 idle_tr(req);
-            @(posedge vif.clk_i);
             seq_item_port.item_done(req);
+           
         end
     endtask: run_phase
 
@@ -68,15 +68,23 @@ class wish_driver extends uvm_driver #(wish_packet);
 
     task read_tr (wish_packet req);
         vif.adr_i = req.adr_i;
-        //vif.dat_i = req.dat_i;
         req.cyc_i = 1;
         req.stb_i = 1;
         req.we_i = 0;
         vif.cyc_i = req.cyc_i;
         vif.stb_i = req.stb_i;
         vif.we_i = req.we_i;
+
         `uvm_info(get_type_name(), $sformatf("READ Packet SENT: \n%s", req.sprint()), UVM_LOW)
-            n_wpkt++;
+        wait (vif.ack_o == 1);
+
+        #5ns;
+        vif.cyc_i <= 0;
+        vif.stb_i <= 0;
+        vif.we_i  <= 0;
+
+        `uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
+        n_wpkt++;
     endtask: read_tr
 
     task write_tr (wish_packet req);
@@ -88,8 +96,16 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.cyc_i = req.cyc_i;
         vif.stb_i = req.stb_i;
         vif.we_i = req.we_i;
+
         `uvm_info(get_type_name(), $sformatf("WRITE Packet SENT: \n%s", req.sprint()), UVM_LOW)
-            n_wpkt++;
+        wait (vif.ack_o == 1);
+
+        vif.cyc_i <= 0;
+        vif.stb_i <= 0;
+        vif.we_i  <= 0;
+
+        `uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
+        n_wpkt++;
     endtask: write_tr
 
     task idle_tr (wish_packet req);
