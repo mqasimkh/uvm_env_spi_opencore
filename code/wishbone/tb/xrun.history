@@ -74,3 +74,6 @@ s73(12Jul2025:15:05:00):  xrun -access +rwc -uvm -f file.f
 s74(12Jul2025:15:06:55):  xrun -access +rwc -uvm -f file.f 
 s75(12Jul2025:15:10:24):  xrun -access +rwc -uvm -f file.f 
 s76(12Jul2025:15:10:40):  xrun -access +rwc -uvm -f file.f -gui 
+s77(12Jul2025:15:24:43):  xrun -access +rwc -uvm -f file.f 
+s78(12Jul2025:15:25:02):  xrun -access +rwc -uvm -f file.f 
+s79(12Jul2025:15:28:20):  xrun -access +rwc -uvm -f file.f -gui 
