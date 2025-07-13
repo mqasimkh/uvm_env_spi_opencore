@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 13, 2025 at 12:06:19 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 13, 2025 at 20:03:52 PKT
 xrun
 	-access +rwc
 	-uvm
@@ -198,9 +198,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file '../sv/wish_monitor.sv' is newer than expected.
-	expected: Sun Jul 13 12:04:25 2025
-	actual:   Sun Jul 13 12:06:17 2025
+Recompiling... reason: file '../sv/wish_sequence.sv' is newer than expected.
+	expected: Sun Jul 13 17:24:19 2025
+	actual:   Sun Jul 13 20:03:50 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -338,10 +338,14 @@ DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
 file: ../sv/wish_pkg.sv
+          req.dat_i = 8'b111000011;
+                                 |
+xmvlog: *W,INTOVF (../sv/wish_sequence.sv,74|33): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+(`include file: ../sv/wish_sequence.sv line 74, file: ../sv/wish_pkg.sv line 8)
       req.dat_i = 8'b111000011;
                              |
-xmvlog: *W,INTOVF (../sv/wish_sequence.sv,77|29): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
-(`include file: ../sv/wish_sequence.sv line 77, file: ../sv/wish_pkg.sv line 8)
+xmvlog: *W,INTOVF (../sv/wish_sequence.sv,97|29): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+(`include file: ../sv/wish_sequence.sv line 97, file: ../sv/wish_pkg.sv line 8)
         `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
                                                      |
 xmvlog: *W,NONPRT (../sv/wish_driver.sv,20|53): non-printable character (0xe2) ignored.
@@ -370,7 +374,7 @@ package wish_pkg;
                |
 xmvlog: *W,TSNSPK (../sv/wish_pkg.sv,1|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
 	package worklib.wish_pkg:sv
-		errors: 0, warnings: 8
+		errors: 0, warnings: 9
 file: tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
@@ -569,8 +573,8 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.tb_top:sv <0x7033d3b4>
-			streams: 593, words: 703004
+		worklib.tb_top:sv <0x3c39e1ba>
+			streams: 611, words: 713541
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -578,19 +582,19 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                       4       3
 		Interfaces:                    1       1
 		Verilog packages:              5       5
-		Registers:                 14067   10256
+		Registers:                 14113   10277
 		Scalar wires:                 46       -
 		Expanded wires:                2       1
 		Vectored wires:               17       -
 		Named events:                  4      12
 		Always blocks:                18      14
-		Initial blocks:              292     160
+		Initial blocks:              295     161
 		Parallel blocks:              26      27
 		Cont. assignments:            22      35
 		Pseudo assignments:           16       -
 		Assertions:                    2       2
-		SV Class declarations:       200     314
-		SV Class specializations:    384     384
+		SV Class declarations:       201     315
+		SV Class specializations:    386     386
 		Process Clocks:               16       3
 		Simulation timescale:      100ps
 	Writing initial simulation snapshot: worklib.tb_top:sv
@@ -675,35 +679,35 @@ UVM_INFO @ 0 ns: reporter [UVMTOP] UVM testbench topology:
 ----------------------------------------------------------------
 Name                         Type                    Size  Value
 ----------------------------------------------------------------
-uvm_test_top                 spi_test                -     @2645
-  spi                        spi_env                 -     @2716
-    wishbone                 wish_env                -     @2748
-      agent                  wish_agent              -     @2781
-        sequencer            wish_sequencer          -     @2975
-          rsp_export         uvm_analysis_export     -     @3033
-          seq_item_export    uvm_seq_item_pull_imp   -     @3581
+uvm_test_top                 spi_test                -     @2649
+  spi                        spi_env                 -     @2720
+    wishbone                 wish_env                -     @2752
+      agent                  wish_agent              -     @2785
+        sequencer            wish_sequencer          -     @2979
+          rsp_export         uvm_analysis_export     -     @3037
+          seq_item_export    uvm_seq_item_pull_imp   -     @3585
           arbitration_queue  array                   0     -    
           lock_queue         array                   0     -    
           num_last_reqs      integral                32    'd1  
           num_last_rsps      integral                32    'd1  
-        wish_driver          wish_driver             -     @2813
-          rsp_port           uvm_analysis_port       -     @2913
-          seq_item_port      uvm_seq_item_pull_port  -     @2862
-        wish_monitor         wish_monitor            -     @2944
+        wish_driver          wish_driver             -     @2817
+          rsp_port           uvm_analysis_port       -     @2917
+          seq_item_port      uvm_seq_item_pull_port  -     @2866
+        wish_monitor         wish_monitor            -     @2948
 ----------------------------------------------------------------
 
 UVM_INFO ../sv/wish_monitor.sv(17) @ 0 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Running Simulation ...
 UVM_INFO ../sv/wish_sequence.sv(21) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION RAISED
-UVM_INFO ../sv/wish_sequence.sv(73) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
+UVM_INFO ../sv/wish_sequence.sv(93) @ 0 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] Running Sequence test_write_seq ...
 UVM_INFO ../sv/wish_monitor.sv(30) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] RESET Deasserted  Starting MONITOR
 UVM_INFO ../sv/wish_driver.sv(20) @ 10 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] RESET Deasserted  Starting DRIVER
-UVM_INFO ../sv/wish_driver.sv(92) @ 20 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
+UVM_INFO ../sv/wish_driver.sv(92) @ 20 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 1 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3647                                                   
+req                            wish_packet  -     @3651                                                   
   operation                    op_t         32    WRITE                                                   
-  adr_i                        integral     3     'b10                                                    
+  adr_i                        integral     3     'b0                                                     
   dat_i                        integral     8     'b11000011                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
@@ -722,30 +726,31 @@ UVM_INFO ../sv/wish_monitor.sv(69) @ 25 ns: uvm_test_top.spi.wishbone.agent.wish
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3781     
+wpkt         wish_packet  -     @3785     
   operation  op_t         32    WRITE     
-  adr_i      integral     3     'b10      
+  adr_i      integral     3     'b0       
   dat_i      integral     8     'b11000011
   cyc_i      integral     1     'h1       
   stb_i      integral     1     'h1       
   we_i       integral     1     'h1       
-  dat_o      integral     8     'b0       
+  dat_o      integral     8     'b10000   
 ------------------------------------------
 
-////////////////////////////////
-[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 11000011 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(70) @ 30 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 000 | we_i = 1 | dat_i = 11000011 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 25 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 1 COMPLETE ***
+UVM_INFO ../sv/wish_driver.sv(92) @ 30 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 2 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3740                                                   
-  operation                    op_t         32    READ                                                    
+req                            wish_packet  -     @3765                                                   
+  operation                    op_t         32    WRITE                                                   
   adr_i                        integral     3     'b10                                                    
-  dat_i                        integral     8     'b0                                                     
+  dat_i                        integral     8     'b10101010                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h0                                                     
+  we_i                         integral     1     'h1                                                     
   dat_o                        integral     8     'b0                                                     
   begin_time                   time         64    30 ns                                                   
   depth                        int          32    'd2                                                     
@@ -760,30 +765,31 @@ UVM_INFO ../sv/wish_monitor.sv(69) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3795     
-  operation  op_t         32    READ      
+wpkt         wish_packet  -     @3799     
+  operation  op_t         32    WRITE     
   adr_i      integral     3     'b10      
-  dat_i      integral     8     'b11000011
+  dat_i      integral     8     'b10101010
   cyc_i      integral     1     'h1       
   stb_i      integral     1     'h1       
-  we_i       integral     1     'h0       
-  dat_o      integral     8     'b0       
+  we_i       integral     1     'h1       
+  dat_o      integral     8     'b10000   
 ------------------------------------------
 
-////////////////////////////////
-[READ] PACKET COLLECTED DETAILS: adr = 010 | we_i = 0 | dat_o = 00000000 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(70) @ 40 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 10101010 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 35 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 2 COMPLETE ***
+UVM_INFO ../sv/wish_driver.sv(92) @ 40 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 3 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3745                                                   
-  operation                    op_t         32    READ                                                    
-  adr_i                        integral     3     'b1                                                     
-  dat_i                        integral     8     'b0                                                     
+req                            wish_packet  -     @3740                                                   
+  operation                    op_t         32    WRITE                                                   
+  adr_i                        integral     3     'b10                                                    
+  dat_i                        integral     8     'b10101010                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h0                                                     
+  we_i                         integral     1     'h1                                                     
   dat_o                        integral     8     'b0                                                     
   begin_time                   time         64    40 ns                                                   
   depth                        int          32    'd2                                                     
@@ -798,30 +804,31 @@ UVM_INFO ../sv/wish_monitor.sv(69) @ 45 ns: uvm_test_top.spi.wishbone.agent.wish
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3799     
-  operation  op_t         32    READ      
-  adr_i      integral     3     'b1       
-  dat_i      integral     8     'b11000011
+wpkt         wish_packet  -     @3803     
+  operation  op_t         32    WRITE     
+  adr_i      integral     3     'b10      
+  dat_i      integral     8     'b10101010
   cyc_i      integral     1     'h1       
   stb_i      integral     1     'h1       
-  we_i       integral     1     'h0       
-  dat_o      integral     8     'b101     
+  we_i       integral     1     'h1       
+  dat_o      integral     8     'b0       
 ------------------------------------------
 
-////////////////////////////////
-[READ] PACKET COLLECTED DETAILS: adr = 001 | we_i = 0 | dat_o = 00000101 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(70) @ 50 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 10101010 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 45 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 3 COMPLETE ***
+UVM_INFO ../sv/wish_driver.sv(92) @ 50 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 4 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3776                                                   
-  operation                    op_t         32    READ                                                    
-  adr_i                        integral     3     'b0                                                     
-  dat_i                        integral     8     'b0                                                     
+req                            wish_packet  -     @3794                                                   
+  operation                    op_t         32    WRITE                                                   
+  adr_i                        integral     3     'b10                                                    
+  dat_i                        integral     8     'b10101010                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h0                                                     
+  we_i                         integral     1     'h1                                                     
   dat_o                        integral     8     'b0                                                     
   begin_time                   time         64    50 ns                                                   
   depth                        int          32    'd2                                                     
@@ -836,27 +843,28 @@ UVM_INFO ../sv/wish_monitor.sv(69) @ 55 ns: uvm_test_top.spi.wishbone.agent.wish
 ------------------------------------------
 Name         Type         Size  Value     
 ------------------------------------------
-wpkt         wish_packet  -     @3793     
-  operation  op_t         32    READ      
-  adr_i      integral     3     'b0       
-  dat_i      integral     8     'b11000011
+wpkt         wish_packet  -     @3757     
+  operation  op_t         32    WRITE     
+  adr_i      integral     3     'b10      
+  dat_i      integral     8     'b10101010
   cyc_i      integral     1     'h1       
   stb_i      integral     1     'h1       
-  we_i       integral     1     'h0       
-  dat_o      integral     8     'b101     
+  we_i       integral     1     'h1       
+  dat_o      integral     8     'b0       
 ------------------------------------------
 
-////////////////////////////////
-[READ] PACKET COLLECTED DETAILS: adr = 000 | we_i = 0 | dat_o = 00000101 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(92) @ 60 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 10101010 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 55 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 4 COMPLETE ***
+UVM_INFO ../sv/wish_driver.sv(92) @ 60 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 5 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3788                                                   
+req                            wish_packet  -     @3785                                                   
   operation                    op_t         32    WRITE                                                   
-  adr_i                        integral     3     'b0                                                     
-  dat_i                        integral     8     'b1101000                                               
+  adr_i                        integral     3     'b10                                                    
+  dat_i                        integral     8     'b10101010                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
   we_i                         integral     1     'h1                                                     
@@ -871,33 +879,34 @@ req                            wish_packet  -     @3788
 UVM_INFO ../sv/wish_monitor.sv(37) @ 65 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @65 ns: Valid Transaction Detected, ack_o=0
 UVM_INFO ../sv/wish_monitor.sv(39) @ 65 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @65 ns: Acknowledgment Received
 UVM_INFO ../sv/wish_monitor.sv(69) @ 65 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
------------------------------------------
-Name         Type         Size  Value    
------------------------------------------
-wpkt         wish_packet  -     @3803    
-  operation  op_t         32    WRITE    
-  adr_i      integral     3     'b0      
-  dat_i      integral     8     'b1101000
-  cyc_i      integral     1     'h1      
-  stb_i      integral     1     'h1      
-  we_i       integral     1     'h1      
-  dat_o      integral     8     'b10000  
------------------------------------------
+------------------------------------------
+Name         Type         Size  Value     
+------------------------------------------
+wpkt         wish_packet  -     @3807     
+  operation  op_t         32    WRITE     
+  adr_i      integral     3     'b10      
+  dat_i      integral     8     'b10101010
+  cyc_i      integral     1     'h1       
+  stb_i      integral     1     'h1       
+  we_i       integral     1     'h1       
+  dat_o      integral     8     'b0       
+------------------------------------------
 
-////////////////////////////////
-[WRITE] PACKET COLLECTED DETAILS: adr = 000 | we_i = 1 | dat_i = 01101000 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(70) @ 70 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] READ Packet SENT: 
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 10101010 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 65 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 5 COMPLETE ***
+UVM_INFO ../sv/wish_driver.sv(92) @ 70 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] Transaction # 6 - WRITE Packet SENT: 
 ----------------------------------------------------------------------------------------------------------
 Name                           Type         Size  Value                                                   
 ----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3766                                                   
-  operation                    op_t         32    READ                                                    
-  adr_i                        integral     3     'b0                                                     
-  dat_i                        integral     8     'b0                                                     
+req                            wish_packet  -     @3781                                                   
+  operation                    op_t         32    WRITE                                                   
+  adr_i                        integral     3     'b10                                                    
+  dat_i                        integral     8     'b10101010                                              
   cyc_i                        integral     1     'h1                                                     
   stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h0                                                     
+  we_i                         integral     1     'h1                                                     
   dat_o                        integral     8     'b0                                                     
   begin_time                   time         64    70 ns                                                   
   depth                        int          32    'd2                                                     
@@ -909,64 +918,27 @@ req                            wish_packet  -     @3766
 UVM_INFO ../sv/wish_monitor.sv(37) @ 75 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @75 ns: Valid Transaction Detected, ack_o=1
 UVM_INFO ../sv/wish_monitor.sv(39) @ 75 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @75 ns: Acknowledgment Received
 UVM_INFO ../sv/wish_monitor.sv(69) @ 75 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
------------------------------------------
-Name         Type         Size  Value    
------------------------------------------
-wpkt         wish_packet  -     @3800    
-  operation  op_t         32    READ     
-  adr_i      integral     3     'b0      
-  dat_i      integral     8     'b1101000
-  cyc_i      integral     1     'h1      
-  stb_i      integral     1     'h1      
-  we_i       integral     1     'h0      
-  dat_o      integral     8     'b10000  
------------------------------------------
+------------------------------------------
+Name         Type         Size  Value     
+------------------------------------------
+wpkt         wish_packet  -     @3736     
+  operation  op_t         32    WRITE     
+  adr_i      integral     3     'b10      
+  dat_i      integral     8     'b10101010
+  cyc_i      integral     1     'h1       
+  stb_i      integral     1     'h1       
+  we_i       integral     1     'h1       
+  dat_o      integral     8     'b0       
+------------------------------------------
 
-////////////////////////////////
-[READ] PACKET COLLECTED DETAILS: adr = 000 | we_i = 0 | dat_o = 00010000 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_driver.sv(92) @ 80 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] WRITE Packet SENT: 
-----------------------------------------------------------------------------------------------------------
-Name                           Type         Size  Value                                                   
-----------------------------------------------------------------------------------------------------------
-req                            wish_packet  -     @3769                                                   
-  operation                    op_t         32    WRITE                                                   
-  adr_i                        integral     3     'b0                                                     
-  dat_i                        integral     8     'b1101000                                               
-  cyc_i                        integral     1     'h1                                                     
-  stb_i                        integral     1     'h1                                                     
-  we_i                         integral     1     'h1                                                     
-  dat_o                        integral     8     'b0                                                     
-  begin_time                   time         64    80 ns                                                   
-  depth                        int          32    'd2                                                     
-  parent sequence (name)       string       14    test_write_seq                                          
-  parent sequence (full name)  string       56    uvm_test_top.spi.wishbone.agent.sequencer.test_write_seq
-  sequencer                    string       41    uvm_test_top.spi.wishbone.agent.sequencer               
-----------------------------------------------------------------------------------------------------------
-
-UVM_INFO ../sv/wish_monitor.sv(37) @ 85 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @85 ns: Valid Transaction Detected, ack_o=0
-UVM_INFO ../sv/wish_monitor.sv(39) @ 85 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] @85 ns: Acknowledgment Received
-UVM_INFO ../sv/wish_monitor.sv(69) @ 85 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] Packet COLLECTED :
------------------------------------------
-Name         Type         Size  Value    
------------------------------------------
-wpkt         wish_packet  -     @3807    
-  operation  op_t         32    WRITE    
-  adr_i      integral     3     'b0      
-  dat_i      integral     8     'b1101000
-  cyc_i      integral     1     'h1      
-  stb_i      integral     1     'h1      
-  we_i       integral     1     'h1      
-  dat_o      integral     8     'b1111000
------------------------------------------
-
-////////////////////////////////
-[WRITE] PACKET COLLECTED DETAILS: adr = 000 | we_i = 1 | dat_i = 01101000 | ack_o = 1
-////////////////////////////////
-UVM_INFO ../sv/wish_sequence.sv(35) @ 145 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 145 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(43) @ 145 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 7
-UVM_INFO ../sv/wish_monitor.sv(48) @ 145 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 7
+***************************************************************************************
+[WRITE] PACKET COLLECTED DETAILS: adr = 010 | we_i = 1 | dat_i = 10101010 | ack_o = 1
+***************************************************************************************
+UVM_INFO ../sv/wish_monitor.sv(75) @ 75 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 6 COMPLETE ***
+UVM_INFO ../sv/wish_sequence.sv(35) @ 75 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 80 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/wish_driver.sv(43) @ 80 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 6
+UVM_INFO ../sv/wish_monitor.sv(48) @ 80 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 6
 
 --- UVM Report catcher Summary ---
 
@@ -981,7 +953,7 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   45
+UVM_INFO :   47
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -993,10 +965,10 @@ UVM_FATAL :    0
 [spi_test]     1
 [test_write_seq]     3
 [wish_agent]     1
-[wish_driver]    10
-[wish_monitor]    25
+[wish_driver]     9
+[wish_monitor]    28
 [wish_sequencer]     1
-Simulation complete via $finish(1) at time 145 NS + 47
+Simulation complete via $finish(1) at time 80 NS + 45
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 13, 2025 at 12:06:21 PKT  (total: 00:00:02)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 13, 2025 at 20:03:54 PKT  (total: 00:00:02)

@@ -18,4 +18,14 @@ class spi_test extends uvm_test;
         uvm_top.print_topology();
     endfunction: end_of_elaboration_phase
 
+    task run_phase (uvm_phase phase);
+        uvm_objection obj;
+        obj = phase.get_objection();
+        obj.set_drain_time(this, 5ns);
+    endtask: run_phase
+
+    function void check_phase(uvm_phase phase);
+        check_config_usage();
+    endfunction: check_phase
+
 endclass: spi_test

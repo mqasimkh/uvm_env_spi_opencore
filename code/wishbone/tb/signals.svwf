@@ -63,5 +63,23 @@ set id [waveform add -signals [subst  {
 set id [waveform add -signals [subst  {
 	{[format {tb_top.dut.we_i}]}
 	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.mosi_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.spe}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.cpha}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.cpol}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.wffull}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.wfempty}]}
+	} ]]
 
-waveform xview limits 0 125ns
+waveform xview limits 0 110000ps

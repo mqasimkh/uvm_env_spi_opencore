@@ -69,14 +69,16 @@ class wish_monitor extends uvm_monitor;
         `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
 
         if (wpkt.operation == WRITE) begin
-            $display("*******************************************************************************");
+            $display("***************************************************************************************");
             $display("[WRITE] PACKET COLLECTED DETAILS: adr = %b | we_i = %b | dat_i = %b | ack_o = %b", wpkt.adr_i, wpkt.we_i, wpkt.dat_i, vif.ack_o);
-            $display("*******************************************************************************");
+            $display("***************************************************************************************");
+            `uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt+1), UVM_LOW)
         end
         else if ((wpkt.operation == READ)) begin
-            $display("*******************************************************************************");
+            $display("***************************************************************************************");
             $display("[READ] PACKET COLLECTED DETAILS: adr = %b | we_i = %b | dat_o = %b | ack_o = %b", wpkt.adr_i, wpkt.we_i, wpkt.dat_o, vif.ack_o);
-            $display("*******************************************************************************");
+            $display("***************************************************************************************");
+            `uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt+1), UVM_LOW)
         end
         n_wpkt++;
     endtask: collect_packet

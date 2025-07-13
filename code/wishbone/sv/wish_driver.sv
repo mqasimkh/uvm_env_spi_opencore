@@ -54,7 +54,7 @@ class wish_driver extends uvm_driver #(wish_packet);
             req.stb_i = 1;
             vif.cyc_i = req.cyc_i;
             vif.stb_i = req.stb_i;
-        `uvm_info(get_type_name(), $sformatf("Packet SENT: \n%s", req.sprint()), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("Transaction # %0d - Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
         n_wpkt++;
     endtask: send_packets
 
@@ -67,15 +67,15 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.stb_i = req.stb_i;
         vif.we_i = req.we_i;
 
-        `uvm_info(get_type_name(), $sformatf("READ Packet SENT: \n%s", req.sprint()), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("Transaction # %0d - READ Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
         wait (vif.ack_o == 1);
 
-        #5ns;
-        vif.cyc_i <= 0;
-        vif.stb_i <= 0;
-        vif.we_i  <= 0;
+        //#5ns;
+        //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt+1), UVM_LOW)
+        // vif.cyc_i <= 0;
+        // vif.stb_i <= 0;
+        // vif.we_i  <= 0;
 
-        //`uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
         n_wpkt++;
     endtask: read_tr
 
@@ -89,13 +89,14 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.stb_i = req.stb_i;
         vif.we_i = req.we_i;
 
-        `uvm_info(get_type_name(), $sformatf("WRITE Packet SENT: \n%s", req.sprint()), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("Transaction # %0d - WRITE Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
         wait (vif.ack_o == 1);
 
         #5ns;
-        vif.cyc_i <= 0;
-        vif.stb_i <= 0;
-        vif.we_i  <= 0;
+        //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt), UVM_LOW)
+        // vif.cyc_i <= 0;
+        // vif.stb_i <= 0;
+        // vif.we_i  <= 0;
 
         //`uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
         n_wpkt++;
