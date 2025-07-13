@@ -71,21 +71,21 @@ class test_write_seq extends wish_sequence;
 
   task body();
     `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b111000011;
-      // `uvm_send(req)
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b10;
+      req.dat_i = 8'b111000011;
+      `uvm_send(req)
 
       // `uvm_create(req)
       // req.operation = IDLE;
       // req.adr_i = 3'b10;
       // `uvm_send(req)
 
-      // `uvm_create(req)
-      // req.operation = READ;
-      // req.adr_i = 3'b10;
-      // `uvm_send(req)
+      `uvm_create(req)
+      req.operation = READ;
+      req.adr_i = 3'b10;
+      `uvm_send(req)
 
       // `uvm_create(req)
       // req.operation = IDLE;

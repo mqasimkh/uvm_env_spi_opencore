@@ -23,29 +23,25 @@ class wish_monitor extends uvm_monitor;
     endfunction: connect_phase
 
     task run_phase (uvm_phase phase);
-        
         if (vif == null)
-        `uvm_fatal(get_type_name(), "Monitor VIF is NULL in run_phase!")
-        
-         wait (vif.rst_i == 0);
-        `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
+            `uvm_fatal(get_type_name(), "Monitor VIF is NULL in run_phase!")
+
+        wait (vif.rst_i == 0);
+            `uvm_info(get_type_name(), "RESET Deasserted — Starting MONITOR", UVM_LOW)
 
         //@(posedge vif.clk_i);
-        
         forever begin
             @(posedge vif.clk_i);
             //@(posedge vif.ack_o);
             if (vif.cyc_i && vif.stb_i) begin
-                `uvm_info(get_type_name(), $sformatf("@%0t: Valid transaction detected, ack_o=%b", $time, vif.ack_o), UVM_HIGH)
-            wait (vif.ack_o == 1)
-                `uvm_info(get_type_name(), $sformatf("@%0t: Acknowledgment received", $time), UVM_HIGH)
-            wpkt = wish_packet::type_id::create("wpkt", this);
-            collect_packet(wpkt);
+                `uvm_info(get_type_name(), $sformatf("@%0t: Valid Transaction Detected, ack_o=%b", $time, vif.ack_o), UVM_HIGH)
+                wait (vif.ack_o == 1)
+                `uvm_info(get_type_name(), $sformatf("@%0t: Acknowledgment Received", $time), UVM_HIGH)
+                wpkt = wish_packet::type_id::create("wpkt", this);
+                collect_packet(wpkt);
             end
-            //@(posedge vif.clk_i);
-        
+        //@(posedge vif.clk_i);
         end
-
     endtask: run_phase
 
     function void report_phase(uvm_phase phase);
@@ -58,7 +54,6 @@ class wish_monitor extends uvm_monitor;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     task collect_packet(wish_packet wpkt);
-
         if (vif.we_i)
             wpkt.operation = WRITE;
         else
@@ -72,10 +67,18 @@ class wish_monitor extends uvm_monitor;
         wpkt.we_i =  vif.we_i;
 
         `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
-        $display("PACKET: adr=%b we=%b dat_i=%b dat_o=%b", 
-          wpkt.adr_i, wpkt.we_i, wpkt.dat_i, wpkt.dat_o);
-        n_wpkt++;
 
+        if (wpkt.operation == WRITE) begin
+            $display("*******************************************************************************");
+            $display("[WRITE] PACKET COLLECTED DETAILS: adr = %b | we_i = %b | dat_i = %b | ack_o = %b", wpkt.adr_i, wpkt.we_i, wpkt.dat_i, vif.ack_o);
+            $display("*******************************************************************************");
+        end
+        else if ((wpkt.operation == READ)) begin
+            $display("*******************************************************************************");
+            $display("[READ] PACKET COLLECTED DETAILS: adr = %b | we_i = %b | dat_o = %b | ack_o = %b", wpkt.adr_i, wpkt.we_i, wpkt.dat_o, vif.ack_o);
+            $display("*******************************************************************************");
+        end
+        n_wpkt++;
     endtask: collect_packet
 
 endclass: wish_monitor

@@ -13,18 +13,11 @@ class wish_driver extends uvm_driver #(wish_packet);
     endfunction: build_phase
 
     task run_phase(uvm_phase phase);
-
         if (vif == null)
         `uvm_fatal(get_type_name(), "Driver VIF is NULL in run_phase!")
 
         wait (vif.rst_i == 0);
         `uvm_info(get_type_name(), "RESET Deasserted — Starting DRIVER", UVM_LOW)
-
-        // vif.cyc_i  = 0;
-        // vif.stb_i  = 0;
-        // vif.we_i   = 0;
-        // vif.adr_i  = 0;
-        // vif.dat_i  = 0;
 
         forever begin
             @(negedge vif.clk_i);
@@ -38,7 +31,6 @@ class wish_driver extends uvm_driver #(wish_packet);
             else
                 idle_tr(req);
             seq_item_port.item_done(req);
-           
         end
     endtask: run_phase
 
@@ -83,7 +75,7 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.stb_i <= 0;
         vif.we_i  <= 0;
 
-        `uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
+        //`uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
         n_wpkt++;
     endtask: read_tr
 
@@ -100,11 +92,12 @@ class wish_driver extends uvm_driver #(wish_packet);
         `uvm_info(get_type_name(), $sformatf("WRITE Packet SENT: \n%s", req.sprint()), UVM_LOW)
         wait (vif.ack_o == 1);
 
+        #5ns;
         vif.cyc_i <= 0;
         vif.stb_i <= 0;
         vif.we_i  <= 0;
 
-        `uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
+        //`uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
         n_wpkt++;
     endtask: write_tr
 
