@@ -28,7 +28,7 @@ class wish_driver extends uvm_driver #(wish_packet);
                 read_tr(req);
             else if (req.operation == WRITE)
                 write_tr(req);
-            else
+            else 
                 idle_tr(req);
             seq_item_port.item_done(req);
         end
@@ -47,16 +47,16 @@ class wish_driver extends uvm_driver #(wish_packet);
 ///////////////////                        driver_methods                                      ///////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    task send_packets(wish_packet req);
-            vif.adr_i = req.adr_i;
-            vif.dat_i = req.dat_i;
-            req.cyc_i = 1;
-            req.stb_i = 1;
-            vif.cyc_i = req.cyc_i;
-            vif.stb_i = req.stb_i;
-        `uvm_info(get_type_name(), $sformatf("Transaction # %0d - Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
-        n_wpkt++;
-    endtask: send_packets
+    // task send_packets(wish_packet req);
+    //         vif.adr_i = req.adr_i;
+    //         vif.dat_i = req.dat_i;
+    //         req.cyc_i = 1;
+    //         req.stb_i = 1;
+    //         vif.cyc_i = req.cyc_i;
+    //         vif.stb_i = req.stb_i;
+    //     `uvm_info(get_type_name(), $sformatf("Transaction # %0d - Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
+    //     n_wpkt++;
+    // endtask: send_packets
 
     task read_tr (wish_packet req);
         vif.adr_i = req.adr_i;
@@ -68,9 +68,10 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.we_i = req.we_i;
 
         `uvm_info(get_type_name(), $sformatf("Transaction # %0d - READ Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
-        wait (vif.ack_o == 1);
+        @(posedge vif.ack_o);
+        //wait (vif.ack_o == 1);
 
-        //#5ns;
+        #1ns;
         //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt+1), UVM_LOW)
         vif.cyc_i <= 0;
         vif.stb_i <= 0;
@@ -90,9 +91,9 @@ class wish_driver extends uvm_driver #(wish_packet);
         vif.we_i = req.we_i;
 
         `uvm_info(get_type_name(), $sformatf("Transaction # %0d - WRITE Packet SENT: \n%s", n_wpkt+1, req.sprint()), UVM_LOW)
-        wait (vif.ack_o == 1);
-
-        #5ns;
+        //wait (vif.ack_o == 1);
+        @(posedge vif.ack_o);
+        #1ns;
         //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt), UVM_LOW)
         vif.cyc_i <= 0;
         vif.stb_i <= 0;

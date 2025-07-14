@@ -7,6 +7,7 @@ class spi_driver extends uvm_driver #(spi_packet);
 
     virtual spis_if vif;
     spi_packet spkt;
+    int s_pkt;
 
     function void build_phase (uvm_phase phase);
         `uvm_info(get_type_name(), "BUILD PHASE RUNNING ...", UVM_LOW)
@@ -17,6 +18,7 @@ class spi_driver extends uvm_driver #(spi_packet);
             `uvm_fatal(get_type_name(), "SPI_SLAVE Driver VIF is NULL in run_phase!")
 
         forever begin
+            //@(negedge vif.ss_o);
             send_miso();
         end
 
@@ -24,8 +26,12 @@ class spi_driver extends uvm_driver #(spi_packet);
 
     function void connect_phase (uvm_phase phase);
         if (!uvm_config_db#(virtual spis_if)::get(this, "", "vif", vif))
-        `uvm_fatal("NOVIF", "VIF in SPI_SLAVE MONITOR is NOT SET")
+        `uvm_fatal("NOVIF", "VIF in SPI_SLAVE DRIVER is NOT SET")
     endfunction: connect_phase
+
+    function void report_phase(uvm_phase phase);
+        `uvm_info(get_type_name(), $sformatf("SPI_DRIVER : MISO Data_Packets Sent : %0d", s_pkt), UVM_LOW)
+    endfunction : report_phase
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////                          driver_method                                     ///////////////////
@@ -41,6 +47,8 @@ class spi_driver extends uvm_driver #(spi_packet);
 
         seq_item_port.item_done();
 
+         `uvm_info(get_type_name(), $sformatf("SPI_SLAVE DRIVER - DATA COLLECTED :\n%s", req.sprint()), UVM_LOW)
+        s_pkt++;
     endtask: send_miso
 
 endclass: spi_driver

@@ -32,10 +32,10 @@ class wish_monitor extends uvm_monitor;
         //@(posedge vif.clk_i);
         forever begin
             @(posedge vif.clk_i);
-            //@(posedge vif.ack_o);
             if (vif.cyc_i && vif.stb_i) begin
                 `uvm_info(get_type_name(), $sformatf("@%0t: Valid Transaction Detected, ack_o=%b", $time, vif.ack_o), UVM_HIGH)
                 wait (vif.ack_o == 1)
+                //@(posedge vif.ack_o);
                 `uvm_info(get_type_name(), $sformatf("@%0t: Acknowledgment Received", $time), UVM_HIGH)
                 wpkt = wish_packet::type_id::create("wpkt", this);
                 collect_packet(wpkt);

@@ -52,7 +52,11 @@ class test_sequence_spi extends spi_sequence;
       `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
 
       `uvm_create(req)
-      req.data_out = 8'hA5;
+      req.data_out = 8'b1110101;
+      `uvm_send(req)
+
+      `uvm_create(req)
+      req.data_out = 8'hFF;
       `uvm_send(req)
 
       `uvm_create(req)

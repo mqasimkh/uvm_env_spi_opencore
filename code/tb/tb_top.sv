@@ -11,6 +11,8 @@ module tb_top;
 
   logic clk;
   logic rst;
+  //bit ss_o;
+
 
   initial clk = 0;
   always #5 clk = ~clk;

@@ -23,7 +23,7 @@ class top_test extends uvm_test;
     task run_phase (uvm_phase phase);
         uvm_objection obj;
         obj = phase.get_objection();
-        obj.set_drain_time(this, 15ns);
+        obj.set_drain_time(this, 500ns);
     endtask: run_phase
 
     function void check_phase(uvm_phase phase);

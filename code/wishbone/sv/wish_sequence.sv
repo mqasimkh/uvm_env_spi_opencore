@@ -91,56 +91,90 @@ class test_write_seq extends wish_sequence;
 
   task body();
     `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b011;
+      // req.dat_i = 8'b00000000;
+      // `uvm_send(req)
+
       `uvm_create(req)
       req.operation = WRITE;
-      req.adr_i = 3'b00;
-      req.dat_i = 8'b111000011;
+      req.adr_i = 3'b000;
+      req.dat_i = 8'b11100000;
       `uvm_send(req)
 
+
+       `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b010;
+      req.dat_i = 8'b10101111;
+      `uvm_send(req)
+
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b010;
+      req.dat_i = 8'b11111111;
+      `uvm_send(req)
+
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b010;
+      req.dat_i = 8'b10000001;
+      `uvm_send(req)
+
+
       // `uvm_create(req)
-      // req.operation = IDLE;
+      // req.operation = WRITE;
+      // req.adr_i = 3'b000;
+      // req.dat_i = 8'b00000000;
+      // `uvm_send(req)
+
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b000;
+      // req.dat_i = 8'b11100000;
+      // `uvm_send(req)
+
+     
+
+      
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b010;
+      // req.dat_i = 8'b00110011;
+      // `uvm_send(req)
+
+
+      
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b000;
+      // req.dat_i = 8'b10100000;
+      // `uvm_send(req)
+
+      // `uvm_create(req)
+      // req.operation = WRITE;
       // req.adr_i = 3'b10;
+      // req.dat_i = 8'b10101010;
       // `uvm_send(req)
 
       // `uvm_create(req)
-      // req.operation = READ;
-      // req.adr_i = 3'b00;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = IDLE;
+      // req.operation = WRITE;
       // req.adr_i = 3'b10;
+      // req.dat_i = 8'b10101010;
       // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b10;
-      req.dat_i = 8'b10101010;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b10;
+      // req.dat_i = 8'b10101010;
+      // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b10;
-      req.dat_i = 8'b10101010;
-      `uvm_send(req)
-
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b10;
-      req.dat_i = 8'b10101010;
-      `uvm_send(req)
-
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b10;
-      req.dat_i = 8'b10101010;
-      `uvm_send(req)
-
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b10;
-      req.dat_i = 8'b10101010;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b10;
+      // req.dat_i = 8'b10101010;
+      // `uvm_send(req)
 
       // `uvm_create(req)
       // req.operation = WRITE;
