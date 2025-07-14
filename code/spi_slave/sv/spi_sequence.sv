@@ -41,18 +41,24 @@ endclass: spi_sequence
 //////////////////////////                         test_sequence                                      //////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class test_sequence extends spi_sequence;
-    `uvm_object_utils(test_sequence)
+class test_sequence_spi extends spi_sequence;
+    `uvm_object_utils(test_sequence_spi)
 
-    function new (string name = "test_sequence");
+    function new (string name = "test_sequence_spi");
         super.new(name);
     endfunction: new
 
-    virtual task body();
-        `uvm_info(get_type_name(), "Running Sequence test_sequence ...", UVM_LOW)
-        repeat(5) begin
-            `uvm_do(req)
-        end
+    task body();
+      `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
+
+      `uvm_create(req)
+      req.data_out = 8'hA5;
+      `uvm_send(req)
+
+      `uvm_create(req)
+      req.data_out = 8'hFF;
+      `uvm_send(req)
+
     endtask: body
 
-endclass: spi_sequence
+endclass: test_sequence_spi

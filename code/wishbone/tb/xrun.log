@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 13, 2025 at 20:03:52 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 14, 2025 at 05:30:42 PKT
 xrun
 	-access +rwc
 	-uvm
@@ -198,9 +198,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file '../sv/wish_sequence.sv' is newer than expected.
-	expected: Sun Jul 13 17:24:19 2025
-	actual:   Sun Jul 13 20:03:50 2025
+Recompiling... reason: file './spi_test.sv' is newer than expected.
+	expected: Mon Jul 14 05:29:13 2025
+	actual:   Mon Jul 14 05:30:40 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -373,8 +373,6 @@ xmvlog: *W,NONPRT (../sv/wish_monitor.sv,30|59): non-printable character (0x94) 
 package wish_pkg;
                |
 xmvlog: *W,TSNSPK (../sv/wish_pkg.sv,1|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
-	package worklib.wish_pkg:sv
-		errors: 0, warnings: 9
 file: tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
@@ -573,8 +571,8 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.tb_top:sv <0x3c39e1ba>
-			streams: 611, words: 713541
+		worklib.tb_top:sv <0x104f41fa>
+			streams: 617, words: 721016
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -936,9 +934,9 @@ wpkt         wish_packet  -     @3736
 ***************************************************************************************
 UVM_INFO ../sv/wish_monitor.sv(75) @ 75 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] *** TRANSACTION # 6 COMPLETE ***
 UVM_INFO ../sv/wish_sequence.sv(35) @ 75 ns: uvm_test_top.spi.wishbone.agent.sequencer@@test_write_seq [test_write_seq] OBJECTION DROPPED
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 80 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../sv/wish_driver.sv(43) @ 80 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 6
-UVM_INFO ../sv/wish_monitor.sv(48) @ 80 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 6
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 330 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../sv/wish_driver.sv(43) @ 330 ns: uvm_test_top.spi.wishbone.agent.wish_driver [wish_driver] DRIVER : Wishbone Packets SENT : 6
+UVM_INFO ../sv/wish_monitor.sv(48) @ 330 ns: uvm_test_top.spi.wishbone.agent.wish_monitor [wish_monitor] MONITOR : Wishbone Packets Collected : 6
 
 --- UVM Report catcher Summary ---
 
@@ -968,7 +966,7 @@ UVM_FATAL :    0
 [wish_driver]     9
 [wish_monitor]    28
 [wish_sequencer]     1
-Simulation complete via $finish(1) at time 80 NS + 45
+Simulation complete via $finish(1) at time 330 NS + 45
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 13, 2025 at 20:03:54 PKT  (total: 00:00:02)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 14, 2025 at 05:30:43 PKT  (total: 00:00:01)

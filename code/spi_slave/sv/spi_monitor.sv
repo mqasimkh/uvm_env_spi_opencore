@@ -13,17 +13,34 @@ class spi_monitor extends uvm_monitor;
     endfunction: build_phase
     
     task run_phase (uvm_phase phase);
+        if (vif == null)
+        `uvm_fatal(get_type_name(), "SPI_SLAVE Monitor VIF is NULL in run_phase!")
+
         forever begin
-            collect_data();
+            collect_mosi();
         end
+
     endtask: run_phase
 
-    task collect_data();
-        @(posedge vif.sck_o);
+    function void connect_phase (uvm_phase phase);
+        if (!uvm_config_db#(virtual spis_if)::get(this, "", "vif", vif))
+        `uvm_fatal("NOVIF", "VIF in SPI_SLAVE MONITOR is NOT SET")
+    endfunction: connect_phase
 
-        for (int i = 8; i > 0; i--) begin
-            data_in[i] = vif.mosi;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                        monitor_methods                                     ///////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    task collect_mosi();
+        spkt = spi_packet::type_id::create("spkt", this);
+        spkt.data_in = 0;
+
+        for (int i = 7; i >= 0; i--) begin
+        @(posedge vif.sck_o);
+            spkt.data_in[i] = vif.mosi_o;
         end
+
+        `uvm_info(get_type_name(), $sformatf("SPI_SLAVE MONITOR - DATA COLLECTED :\n%s", spkt.sprint()), UVM_LOW)
 
     endtask: collect_data
 

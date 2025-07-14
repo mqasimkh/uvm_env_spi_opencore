@@ -72,9 +72,9 @@ class wish_driver extends uvm_driver #(wish_packet);
 
         //#5ns;
         //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt+1), UVM_LOW)
-        // vif.cyc_i <= 0;
-        // vif.stb_i <= 0;
-        // vif.we_i  <= 0;
+        vif.cyc_i <= 0;
+        vif.stb_i <= 0;
+        vif.we_i  <= 0;
 
         n_wpkt++;
     endtask: read_tr
@@ -94,9 +94,9 @@ class wish_driver extends uvm_driver #(wish_packet);
 
         #5ns;
         //`uvm_info(get_type_name(), $sformatf("*** TRANSACTION # %0d COMPLETE ***", n_wpkt), UVM_LOW)
-        // vif.cyc_i <= 0;
-        // vif.stb_i <= 0;
-        // vif.we_i  <= 0;
+        vif.cyc_i <= 0;
+        vif.stb_i <= 0;
+        vif.we_i  <= 0;
 
         //`uvm_info(get_type_name(), "Transaction Complete Now", UVM_LOW)
         n_wpkt++;
