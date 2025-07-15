@@ -98,3 +98,22 @@ s97(14Jul2025:11:16:13):  xrun -access +rwc -uvm -f file.f
 s98(14Jul2025:11:17:12):  xrun -access +rwc -uvm -f file.f 
 s99(14Jul2025:11:24:23):  xrun -access +rwc -uvm -f file.f 
 s100(14Jul2025:11:25:11):  xrun -access +rwc -uvm -f file.f 
+s101(14Jul2025:11:27:12):  xrun -access +rwc -uvm -f file.f -gui 
+s102(14Jul2025:11:53:10):  xrun -access +rwc -uvm -f file.f -gui 
+s103(14Jul2025:11:58:37):  xrun -access +rwc -uvm -f file.f -gui 
+s104(14Jul2025:12:16:09):  xrun -access +rwc -uvm -f file.f -gui 
+s105(14Jul2025:12:17:39):  xrun -access +rwc -uvm -f file.f -gui 
+s106(14Jul2025:12:42:57):  xrun -access +rwc -uvm -f file.f 
+s107(14Jul2025:12:44:14):  xrun -access +rwc -uvm -f file.f 
+s108(14Jul2025:12:47:00):  xrun -access +rwc -uvm -f file.f 
+s109(14Jul2025:12:47:20):  xrun -access +rwc -uvm -f file.f 
+s110(14Jul2025:12:59:41):  xrun -access +rwc -uvm -f file.f -gui 
+s111(14Jul2025:13:01:37):  xrun -access +rwc -uvm -f file.f -gui 
+s112(14Jul2025:13:02:20):  xrun -access +rwc -uvm -f file.f -gui 
+s113(14Jul2025:14:13:03):  xrun -access +rwc -uvm -f file.f -gui 
+s114(14Jul2025:14:15:12):  xrun -access +rwc -uvm -f file.f -gui 
+s115(14Jul2025:14:15:53):  xrun -access +rwc -uvm -f file.f -gui 
+s116(14Jul2025:14:22:28):  xrun -access +rwc -uvm -f file.f -gui 
+s117(14Jul2025:15:49:20):  xrun -access +rwc -uvm -f file.f -gui 
+s118(15Jul2025:18:21:17):  xrun -access +rwc -uvm -f file.f -gui 
+s119(15Jul2025:18:24:51):  xrun -access +rwc -uvm -f file.f -gui 

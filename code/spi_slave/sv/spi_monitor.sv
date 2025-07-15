@@ -48,7 +48,7 @@ class spi_monitor extends uvm_monitor;
         //for (int i = 7; i >= 0; i--) begin
         repeat (8) begin
         @(posedge vif.sck_o);
-        `uvm_info(get_type_name(), $sformatf("SCK Tick  @%0t", $time), UVM_LOW)
+        //`uvm_info(get_type_name(), $sformatf("SCK Tick  @%0t", $time), UVM_LOW)
         #1;
             spkt.data_in[i] = vif.mosi_o;
             i--;

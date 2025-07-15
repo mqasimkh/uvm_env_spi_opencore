@@ -122,6 +122,26 @@ class test_write_seq extends wish_sequence;
       req.dat_i = 8'b10000001;
       `uvm_send(req)
 
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b010;
+      req.dat_i = 8'b10101111;
+      `uvm_send(req)
+
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b010;
+      req.dat_i = 8'b10101111;
+      `uvm_send(req)
+
+      #950;
+
+      `uvm_create(req)
+      req.operation = WRITE;
+      req.adr_i = 3'b000;
+      req.dat_i = 8'b10100000;
+      `uvm_send(req)
+
 
       // `uvm_create(req)
       // req.operation = WRITE;
@@ -134,17 +154,12 @@ class test_write_seq extends wish_sequence;
       // req.adr_i = 3'b000;
       // req.dat_i = 8'b11100000;
       // `uvm_send(req)
-
-     
-
       
       // `uvm_create(req)
       // req.operation = WRITE;
       // req.adr_i = 3'b010;
       // req.dat_i = 8'b00110011;
       // `uvm_send(req)
-
-
       
       // `uvm_create(req)
       // req.operation = WRITE;
@@ -198,7 +213,7 @@ class test_write_seq extends wish_sequence;
       // req.dat_i = 8'b1101000;
       // `uvm_send(req)
 
-      //       `uvm_create(req)
+      // `uvm_create(req)
       // req.operation = READ;
       // req.adr_i = 3'b00;
       // `uvm_send(req)
