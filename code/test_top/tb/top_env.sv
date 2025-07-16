@@ -8,18 +8,22 @@ class top_env extends uvm_env;
     wish_env wishbone;
     spis_env spi_slave;
     spi_scoreboard scoreboard;
+    mcsequencer mcseq;
 
     function void build_phase (uvm_phase phase);
         super.build_phase(phase);
         wishbone = wish_env::type_id::create("wishbone", this);
         spi_slave = spis_env::type_id::create("spi_slave", this);
-        scoreboard = spi_scoreboard::type_id::create("spi_scoreboard", this);
+        scoreboard = spi_scoreboard::type_id::create("scoreboard", this);
+        mcseq = mcsequencer::type_id::create("mcseq", this);
         `uvm_info(get_type_name(), "BUILD PHASE OF RUNNING ...", UVM_LOW)
     endfunction: build_phase
     
     function void connect_phase (uvm_phase phase);
         wishbone.agent.monitor.wish_collect_port.connect(scoreboard.wish);
         spi_slave.agent.monitor.spi_collect_port.connect(scoreboard.spi);
+        mcseq.wish = wishbone.agent.sequencer;
+        mcseq.spi = spi_slave.agent.sequencer;
     endfunction: connect_phase
 
 endclass: top_env

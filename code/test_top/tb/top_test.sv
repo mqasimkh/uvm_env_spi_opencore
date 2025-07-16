@@ -8,8 +8,8 @@ class top_test extends uvm_test;
     top_env spi;
 
     function void build_phase (uvm_phase phase);
-        uvm_config_wrapper::set(this, "spi.wishbone.agent.sequencer.run_phase","default_sequence",test_write_seq::get_type());
-        uvm_config_wrapper::set(this, "spi.spi_slave.agent.spi_sequencer.run_phase","default_sequence",test_sequence_spi::get_type());
+        // uvm_config_wrapper::set(this, "spi.wishbone.agent.sequencer.run_phase","default_sequence",test_write_seq::get_type());
+        // uvm_config_wrapper::set(this, "spi.spi_slave.agent.spi_sequencer.run_phase","default_sequence",test_sequence_spi::get_type());
         spi = top_env::type_id::create("spi", this);
         `uvm_info(get_type_name(), "BUILD PHASE OF RUNNING ...", UVM_LOW)
         
@@ -31,3 +31,22 @@ class top_test extends uvm_test;
     endfunction: check_phase
 
 endclass: top_test
+
+//---------------------------------------------------------------------------
+//                          testing_multi_seq
+//---------------------------------------------------------------------------
+
+class multi_channel extends top_test;
+    `uvm_component_utils(multi_channel)
+
+    function new (string name = "top_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction: new
+
+    function void build_phase (uvm_phase phase);
+        uvm_config_wrapper::set(this, "spi.mcseq.run_phase","default_sequence", mcsequence::get_type());
+        super.build_phase(phase);
+    endfunction: build_phase
+
+endclass: multi_channel
+

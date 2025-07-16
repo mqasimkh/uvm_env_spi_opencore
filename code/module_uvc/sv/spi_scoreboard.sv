@@ -51,7 +51,6 @@ class spi_scoreboard extends uvm_scoreboard;
 ////////////////////////////////////////////////////////////////////////
 
     function void compare_transactions();
-        // Only compare when both queues have data
         while (wish_q.size() > 0 && spi_q.size() > 0) begin
             wish_packet wpkt = wish_q.pop_front();
             spi_packet spkt = spi_q.pop_front();
@@ -70,7 +69,7 @@ class spi_scoreboard extends uvm_scoreboard;
                 end
             end
         end
-    endfunction: check_transactions
+    endfunction: compare_transactions
 
 ////////////////////////////////////////////////////////////////////////
 //                        report_phase

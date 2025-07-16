@@ -5,6 +5,7 @@
 -incdir ../../spi_slave/sv
 -incdir ../tb
 -incdir ../sv
+-incdir ../../module_uvc/sv
 -incdir ../../spi_core
 
 //wishbone uvc
@@ -18,8 +19,6 @@
 //dut
 ../../spi_core/fifo4.v
 ../../spi_core/simple_spi_top.v
-
-
 
 tb_top.sv
 

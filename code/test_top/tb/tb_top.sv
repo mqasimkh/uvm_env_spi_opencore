@@ -6,6 +6,8 @@ module tb_top;
   `include "uvm_macros.svh"
   import wish_pkg::*;
   import spi_pkg::*;
+  `include "mcsequencer.sv"
+  `include "mcsequence.sv"
   `include "spi_scoreboard.sv"
   `include "top_env.sv"
   `include "top_test.sv"
@@ -52,7 +54,7 @@ module tb_top;
   initial begin
     uvm_config_db#(virtual wish_if)::set(null,"uvm_test_top.spi.wishbone.*", "vif", w_if);
     uvm_config_db#(virtual spis_if)::set(null,"uvm_test_top.spi.spi_slave.*", "vif", s_if);
-    run_test("top_test");
+    run_test("multi_channel");
   end
 
   initial begin
