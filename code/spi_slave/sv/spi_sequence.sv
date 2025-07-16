@@ -51,11 +51,13 @@ class test_sequence_spi extends spi_sequence;
     task body();
       `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
 
-      repeat (5) begin
-      `uvm_create(req)
-      req.data_out = 8'b11111111;
-      `uvm_send(req)
-      end
+      // repeat (5) begin
+      // `uvm_create(req)
+      // req.data_out = 8'b11111111;
+      // `uvm_send(req)
+      // end
+
+      `uvm_do(req)
 
     endtask: body
 

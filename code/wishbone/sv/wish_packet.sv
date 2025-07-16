@@ -2,7 +2,7 @@ typedef enum {READ, WRITE, IDLE} op_t;
 
 class wish_packet extends uvm_sequence_item;
 
-    bit [7:0] dat_i;
+    randc bit [7:0] dat_i;
     bit [2:0] adr_i;
     bit [7:0] dat_o;
     randc op_t operation;

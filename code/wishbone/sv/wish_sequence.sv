@@ -103,44 +103,42 @@ class test_write_seq extends wish_sequence;
       req.dat_i = 8'b11100000;
       `uvm_send(req)
 
-
        `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'hA1;
-      `uvm_send(req)
+      `uvm_rand_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b010;
-      req.dat_i = 8'hA2;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b010;
+      // req.dat_i = 8'hA2;
+      // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b010;
-      req.dat_i = 8'hA3;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b010;
+      // req.dat_i = 8'hA3;
+      // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b010;
-      req.dat_i = 8'hA4;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b010;
+      // req.dat_i = 8'hA4;
+      // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b010;
-      req.dat_i = 8'hA5;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b010;
+      // req.dat_i = 8'hA5;
+      // `uvm_send(req)
 
-      #950;
+      // #950;
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b000;
-      req.dat_i = 8'b10100000;
-      `uvm_send(req)
+      // `uvm_create(req)
+      // req.operation = WRITE;
+      // req.adr_i = 3'b000;
+      // req.dat_i = 8'b10100000;
+      // `uvm_send(req)
 
 
       // `uvm_create(req)

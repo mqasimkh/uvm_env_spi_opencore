@@ -1,5 +1,4 @@
 class mcsequencer extends uvm_sequencer;
-    `include "mcsequence.sv"
     `uvm_component_utils(mcsequencer)
 
     wish_sequencer wish;
