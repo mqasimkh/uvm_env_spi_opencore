@@ -5,4 +5,3 @@ qaLog.txt
 *.history
 cov_work/
 xcelium.d/
-test
