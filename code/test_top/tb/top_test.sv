@@ -44,7 +44,7 @@ class multi_channel extends top_test;
     endfunction: new
 
     function void build_phase (uvm_phase phase);
-        uvm_config_wrapper::set(this, "spi.mcseq.run_phase","default_sequence", mcsequence::get_type());
+        uvm_config_wrapper::set(this, "spi.mcseq.run_phase","default_sequence", write_test::get_type());
         super.build_phase(phase);
     endfunction: build_phase
 

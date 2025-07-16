@@ -1,10 +1,10 @@
 
 class mcsequence extends uvm_sequence;
     `uvm_object_utils(mcsequence)
-    `uvm_declare_p_sequencer(mcsequencer)
+    // `uvm_declare_p_sequencer(mcsequencer)
 
-    test_write_seq wish_write;
-    test_sequence_spi wpi_write;
+    // test_write_seq wish_write;
+    // test_sequence_spi wpi_write;
 
     function new (string name = "mcsequence");
         super.new(name);
@@ -24,14 +24,14 @@ class mcsequence extends uvm_sequence;
     end
     endtask : pre_body
 
-    virtual task body();
-    super.body();
-    `uvm_info(get_type_name(), "Executing mcsequence sequence", UVM_LOW)
-    fork
-        `uvm_do_on(wish_write, p_sequencer.wish)
-        `uvm_do_on(wpi_write, p_sequencer.spi)
-    join
-    endtask: body
+    // virtual task body();
+    // super.body();
+    // `uvm_info(get_type_name(), "Executing mcsequence sequence", UVM_LOW)
+    // fork
+    //     `uvm_do_on(wish_write, p_sequencer.wish)
+    //     `uvm_do_on(wpi_write, p_sequencer.spi)
+    // join
+    // endtask: body
 
     task post_body();
     uvm_phase phase;
@@ -54,5 +54,23 @@ endclass: mcsequence
 //---------------------------------------------------------------------------
 
 class write_test extends mcsequence;
+    `uvm_object_utils(write_test)
+    `uvm_declare_p_sequencer(mcsequencer)
+
+    test_write_seq wish_write;
+    test_sequence_spi wpi_write;
+
+    function new (string name = "write_test");
+        super.new(name);
+    endfunction: new
+
+    task body();
+    super.body();
+    `uvm_info(get_type_name(), "Executing write_test sequence", UVM_LOW)
+    fork
+        `uvm_do_on(wish_write, p_sequencer.wish)
+        `uvm_do_on(wpi_write, p_sequencer.spi)
+    join
+    endtask: body
 
 endclass: write_test
