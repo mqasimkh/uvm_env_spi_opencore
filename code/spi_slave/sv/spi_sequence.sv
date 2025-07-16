@@ -57,6 +57,7 @@ class test_sequence_spi extends spi_sequence;
       // `uvm_send(req)
       // end
 
+      repeat(5)
       `uvm_do(req)
 
     endtask: body

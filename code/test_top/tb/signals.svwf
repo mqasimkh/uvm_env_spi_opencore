@@ -68,5 +68,8 @@ set id [waveform add -signals [subst  {
 	{[format {tb_top.dut.wcol}]}
 	} ]]
 waveform format $id -color #ff00ff
+set id [waveform add -signals [subst  {
+	{[format {tb_top.dut.sck_o}]}
+	} ]]
 
-waveform xview limits 0 1585000ps
+waveform xview limits 0 2000ps

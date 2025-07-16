@@ -39,47 +39,30 @@ class wish_sequence extends uvm_sequence#(wish_packet);
 endclass: wish_sequence
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////                         test_sequence-1                                      //////////////////////////
+//////////////////////////                          enabling_core                                     //////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class test_sequence extends wish_sequence;
-    `uvm_object_utils(test_sequence)
+class enabling_core extends wish_sequence;
+    `uvm_object_utils(enabling_core)
 
-    function new (string name = "test_sequence");
-        super.new(name);
-    endfunction: new
-
-    task body();
-        `uvm_info(get_type_name(), "Running Sequence test_sequence ...", UVM_LOW)
-        repeat(5) begin
-            `uvm_do(req)
-        end
-    endtask: body
-
-endclass: test_sequence
-
-class write_full extends wish_sequence;
-    `uvm_object_utils(write_full)
-
-    function new (string name = "write_full");
+    function new (string name = "enabling_core");
         super.new(name);
     endfunction: new
 
     task body();
         `uvm_info(get_type_name(), "Running Sequence write_full ...", UVM_LOW)
-        repeat(5) begin
+
           `uvm_create(req)
           req.operation = WRITE;
-          req.adr_i = 3'b10;
-          req.dat_i = 8'b111000011;
+          req.adr_i = 3'b000;
+          req.dat_i = 8'b11100000;
           `uvm_send(req)
-        end
     endtask: body
 
-endclass: write_full
+endclass: enabling_core
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////                         test_sequence-2                                    //////////////////////////
+//////////////////////////                         test_write_seq                                    //////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class test_write_seq extends wish_sequence;
@@ -91,141 +74,13 @@ class test_write_seq extends wish_sequence;
 
   task body();
     `uvm_info(get_type_name(), "Running Sequence test_write_seq ...", UVM_LOW)
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b011;
-      // req.dat_i = 8'b00000000;
-      // `uvm_send(req)
 
-      `uvm_create(req)
-      req.operation = WRITE;
-      req.adr_i = 3'b000;
-      req.dat_i = 8'b11100000;
-      `uvm_send(req)
-
+      repeat(5) begin
        `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
       `uvm_rand_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b010;
-      // req.dat_i = 8'hA2;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b010;
-      // req.dat_i = 8'hA3;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b010;
-      // req.dat_i = 8'hA4;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b010;
-      // req.dat_i = 8'hA5;
-      // `uvm_send(req)
-
-      // #950;
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b000;
-      // req.dat_i = 8'b10100000;
-      // `uvm_send(req)
-
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b000;
-      // req.dat_i = 8'b00000000;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b000;
-      // req.dat_i = 8'b11100000;
-      // `uvm_send(req)
-      
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b010;
-      // req.dat_i = 8'b00110011;
-      // `uvm_send(req)
-      
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b000;
-      // req.dat_i = 8'b10100000;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b10101010;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b10101010;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b10101010;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b10101010;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b10;
-      // req.dat_i = 8'b10101010;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = IDLE;
-      // req.adr_i = 3'b10;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = READ;
-      // req.adr_i = 3'b00;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b00;
-      // req.dat_i = 8'b1101000;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = READ;
-      // req.adr_i = 3'b00;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = WRITE;
-      // req.adr_i = 3'b00;
-      // req.dat_i = 8'b1101000;
-      // `uvm_send(req)
-
-      // `uvm_create(req)
-      // req.operation = IDLE;
-      // req.adr_i = 3'b10;
-      // `uvm_send(req)
+      end
 
   endtask: body
 

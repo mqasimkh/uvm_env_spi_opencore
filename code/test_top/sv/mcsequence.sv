@@ -57,20 +57,24 @@ class write_test extends mcsequence;
     `uvm_object_utils(write_test)
     `uvm_declare_p_sequencer(mcsequencer)
 
+    enabling_core enable_core;
     test_write_seq wish_write;
-    test_sequence_spi wpi_write;
+    test_sequence_spi spi_write;
 
     function new (string name = "write_test");
         super.new(name);
     endfunction: new
 
     task body();
-    super.body();
+    int count;
     `uvm_info(get_type_name(), "Executing write_test sequence", UVM_LOW)
+    `uvm_do_on(enable_core, p_sequencer.wish)
+
     fork
         `uvm_do_on(wish_write, p_sequencer.wish)
-        `uvm_do_on(wpi_write, p_sequencer.spi)
+        `uvm_do_on(spi_write, p_sequencer.spi)
     join
+
     endtask: body
 
 endclass: write_test

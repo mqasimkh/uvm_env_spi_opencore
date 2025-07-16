@@ -53,11 +53,12 @@ class spi_monitor extends uvm_monitor;
         repeat (8) begin
         @(posedge vif.sck_o);
         //`uvm_info(get_type_name(), $sformatf("SCK Tick  @%0t", $time), UVM_LOW)
-        #1;
             spkt.data_in[i] = vif.mosi_o;
+            spkt.data_out[i] = vif.miso_i;
             i--;
         end
 
+        #1;
         `uvm_info(get_type_name(), $sformatf("SPI_SLAVE MONITOR - DATA COLLECTED :\n%s", spkt.sprint()), UVM_LOW)
         s_pkt++;
 

@@ -39,7 +39,7 @@ class spi_driver extends uvm_driver #(spi_packet);
 
     task send_miso();
         seq_item_port.get_next_item(req);
-
+        //req.data_out = 8'hFF;
         for (int i = 7; i >= 0; i--) begin
             @(posedge vif.sck_o);
             vif.miso_i = req.data_out[i];
@@ -47,7 +47,7 @@ class spi_driver extends uvm_driver #(spi_packet);
 
         seq_item_port.item_done();
 
-         `uvm_info(get_type_name(), $sformatf("SPI_SLAVE DRIVER - DATA COLLECTED :\n%s", req.sprint()), UVM_LOW)
+         `uvm_info(get_type_name(), $sformatf("SPI_SLAVE DRIVER :\n%s", req.sprint()), UVM_LOW)
         s_pkt++;
     endtask: send_miso
 

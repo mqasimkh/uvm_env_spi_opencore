@@ -5,7 +5,7 @@ class wish_packet extends uvm_sequence_item;
     randc bit [7:0] dat_i;
     bit [2:0] adr_i;
     bit [7:0] dat_o;
-    randc op_t operation;
+    op_t operation;
 
     bit clk_i;
     bit rst_i;
