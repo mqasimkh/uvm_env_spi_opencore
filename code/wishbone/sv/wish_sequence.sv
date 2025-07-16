@@ -107,31 +107,31 @@ class test_write_seq extends wish_sequence;
        `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'b10101111;
+      req.dat_i = 8'hA1;
       `uvm_send(req)
 
       `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'b11111111;
+      req.dat_i = 8'hA2;
       `uvm_send(req)
 
       `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'b10000001;
+      req.dat_i = 8'hA3;
       `uvm_send(req)
 
       `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'b10101111;
+      req.dat_i = 8'hA4;
       `uvm_send(req)
 
       `uvm_create(req)
       req.operation = WRITE;
       req.adr_i = 3'b010;
-      req.dat_i = 8'b10101111;
+      req.dat_i = 8'hA5;
       `uvm_send(req)
 
       #950;

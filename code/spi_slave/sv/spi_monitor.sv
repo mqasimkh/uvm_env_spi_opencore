@@ -1,9 +1,13 @@
 class spi_monitor extends uvm_monitor;
     `uvm_component_utils(spi_monitor)
 
+    uvm_analysis_port #(spi_packet) spi_collect_port;
+
     function new (string name = "spi_monitor", uvm_component parent);
         super.new(name, parent);
+        spi_collect_port = new("spi_collect_port", this);
     endfunction: new
+
     
     virtual spis_if vif;
     spi_packet spkt;
@@ -56,6 +60,9 @@ class spi_monitor extends uvm_monitor;
 
         `uvm_info(get_type_name(), $sformatf("SPI_SLAVE MONITOR - DATA COLLECTED :\n%s", spkt.sprint()), UVM_LOW)
         s_pkt++;
+
+        spi_collect_port.write(spkt);
+
     endtask: collect_mosi
 
 endclass: spi_monitor

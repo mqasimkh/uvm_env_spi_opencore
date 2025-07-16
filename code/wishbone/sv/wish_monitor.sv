@@ -1,13 +1,17 @@
 class wish_monitor extends uvm_monitor;
     `uvm_component_utils(wish_monitor)
 
-    function new (string name = "wish_monitor", uvm_component parent);
-        super.new(name, parent);
-    endfunction: new
-
     wish_packet wpkt;
     int n_wpkt;
     virtual wish_if vif;
+
+    uvm_analysis_port #(wish_packet) wish_collect_port;
+
+    function new (string name = "wish_monitor", uvm_component parent);
+        super.new(name, parent);
+        wish_collect_port = new ("wish_collect_port", this);
+    endfunction: new
+
 
     function void build_phase (uvm_phase phase);
         `uvm_info(get_type_name(), "BUILD PHASE RUNNING ...", UVM_LOW)
@@ -32,13 +36,16 @@ class wish_monitor extends uvm_monitor;
         //@(posedge vif.clk_i);
         forever begin
             @(posedge vif.clk_i);
-            if (vif.cyc_i && vif.stb_i) begin
+            if (vif.cyc_i && vif.stb_i && !vif.ack_o) begin
                 `uvm_info(get_type_name(), $sformatf("@%0t: Valid Transaction Detected, ack_o=%b", $time, vif.ack_o), UVM_HIGH)
                 wait (vif.ack_o == 1)
                 //@(posedge vif.ack_o);
                 `uvm_info(get_type_name(), $sformatf("@%0t: Acknowledgment Received", $time), UVM_HIGH)
                 wpkt = wish_packet::type_id::create("wpkt", this);
+                //wish_collect_port.write(wpkt);
                 collect_packet(wpkt);
+
+                wait (!vif.ack_o || !vif.cyc_i || !vif.stb_i);
             end
         //@(posedge vif.clk_i);
         end
@@ -67,6 +74,8 @@ class wish_monitor extends uvm_monitor;
         wpkt.we_i =  vif.we_i;
 
         `uvm_info(get_type_name(), $sformatf("Packet COLLECTED :\n%s", wpkt.sprint()), UVM_LOW)
+
+        wish_collect_port.write(wpkt);
 
         if (wpkt.operation == WRITE) begin
             $display("***************************************************************************************");
